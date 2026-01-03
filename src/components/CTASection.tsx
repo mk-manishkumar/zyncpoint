@@ -8,7 +8,7 @@ const CTASection = () => {
 
         <p className="text-base md:text-lg text-text-secondary mb-[48px]">Let&apos;s discuss how ZyncPoint can drive your digital transformation and position your business for market leadership.</p>
 
-        <button className="bg-primary text-dark px-8 py-3.5 rounded-full font-semibold text-base hover:bg-primary-light hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(50,184,198,0.4)] transition-all duration-300">Schedule a Consultation</button>
+        <button className="bg-primary text-dark px-8 py-3.5 rounded-full font-semibold text-base hover:bg-primary-light hover:-translate-y-1 hover:shadow-[0_12px_30px_rgba(50,184,198,0.4)] transition-all duration-300 cursor-pointer">Schedule a Consultation</button>
       </div>
     </section>
   );

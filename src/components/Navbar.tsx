@@ -50,9 +50,9 @@ const Navbar = () => {
         </ul>
 
         {/* CTA */}
-        <button onClick={() => smoothScrollTo("#contact")} className="bg-primary text-dark px-[24px] py-[12px] rounded-full font-semibold text-sm hover:bg-primary-light hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(50,184,198,0.3)] transition-all duration-300 cursor-pointer">
-          Get Started
-        </button>
+        <Link href={"/portfolio"}  className="bg-primary text-dark px-[24px] py-[12px] rounded-full font-semibold text-sm hover:bg-primary-light hover:-translate-y-0.5 hover:shadow-[0_8px_20px_rgba(50,184,198,0.3)] transition-all duration-300 cursor-pointer">
+          Portfolio
+        </Link>
       </div>
     </nav>
   );
