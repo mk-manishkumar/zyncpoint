@@ -53,7 +53,7 @@ const About = () => {
           <div className="bg-linear-to-br from-[rgba(50,184,198,0.1)] to-[rgba(255,107,53,0.1)] border border-[rgba(50,184,198,0.2)] rounded-xl p-12 flex items-center justify-center min-h-100">
             <div className="flex flex-col gap-6 items-center text-center">
               <div className="text-8xl opacity-60">
-                <Boxes size={48}/>
+                <Boxes size={48} />
               </div>
               <h3 className="text-2xl font-semibold text-text">Zync Your Vision</h3>
               <p className="text-text-secondary max-w-75">Transform challenges into competitive advantages with cutting-edge technology</p>
@@ -93,5 +93,3 @@ const About = () => {
 };
 
 export default About;
-
-
