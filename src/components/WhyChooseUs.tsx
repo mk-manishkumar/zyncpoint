@@ -41,7 +41,7 @@ const whyItems: WhyItem[] = [
 
 const WhyChoose = () => {
   return (
-    <section id="why" className="scroll-mt-22.5 px-6 py-16 bg-dark-secondary">
+    <section className="scroll-mt-22.5 px-6 py-16 bg-dark-secondary">
       <div className="text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-bold mb-4 text-text">Why Choose ZyncPoint</h2>
         <p className="text-base md:text-lg text-text-secondary">Key advantages that set us apart</p>

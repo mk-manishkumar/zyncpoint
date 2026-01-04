@@ -36,7 +36,7 @@ const services: Service[] = [
 
 const Services = () => {
   return (
-    <section id="services" className="scroll-mt-22.5 px-[24px] py-[64px] bg-dark-secondary">
+    <section className="scroll-mt-22.5 px-[24px] py-[64px] bg-dark-secondary">
       <div className="text-center mb-[64px]">
         <h2 className="text-4xl md:text-5xl font-bold mb-[16px] text-text">Our Core Services</h2>
         <p className="text-base md:text-lg text-text-secondary max-w-150 mx-auto">Comprehensive solutions across the entire digital transformation spectrum</p>

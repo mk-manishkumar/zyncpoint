@@ -1,86 +1,39 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
-
-interface FooterSection {
-  title: string;
-  links: { label: string; href: string }[];
-}
-
-const footerSections: FooterSection[] = [
-  {
-    title: "About",
-    links: [
-      { label: "About Us", href: "#about" },
-      { label: "Services", href: "#services" },
-      { label: "Case Studies", href: "#" },
-      { label: "Team", href: "#" },
-    ],
-  },
-  {
-    title: "Services",
-    links: [
-      { label: "Web Development", href: "#" },
-      { label: "AI Solutions", href: "#" },
-      { label: "Consultancy", href: "#" },
-      { label: "Cloud Deployment", href: "#" },
-    ],
-  },
-  {
-    title: "Connect",
-    links: [
-      { label: "Twitter", href: "#" },
-      { label: "LinkedIn", href: "#" },
-      { label: "GitHub", href: "#" },
-      { label: "Email", href: "#" },
-    ],
-  },
-  {
-    title: "Legal",
-    links: [
-      { label: "Privacy Policy", href: "#" },
-      { label: "Terms of Service", href: "#" },
-      { label: "Cookie Policy", href: "#" },
-      { label: "Contact", href: "#" },
-    ],
-  },
-];
+import { FiLinkedin } from "react-icons/fi";
+import { LuTwitter } from "react-icons/lu";
 
 const Footer = () => {
-  const handleSmoothScroll = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith("#")) {
-      e.preventDefault();
-      const element = document.querySelector(href);
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
-    }
-  };
-
   return (
-    <footer className="bg-[rgba(10,15,20,0.95)] px-[24px] py-[48px] border-t border-[rgba(50,184,198,0.1)]">
+    <footer className="bg-[rgba(10,15,20,0.95)] px-6 py-12 border-t border-[rgba(50,184,198,0.1)]">
       <div className="max-w-300 mx-auto">
-        {/* Footer Links */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-[48px] mb-[48px]">
-          {footerSections.map((section) => (
-            <div key={section.title}>
-              <h4 className="mb-[16px] text-primary font-semibold">{section.title}</h4>
-              <ul className="list-none space-y-[12px]">
-                {section.links.map((link) => (
-                  <li key={link.href}>
-                    <Link href={link.href} onClick={(e) => handleSmoothScroll(e, link.href)} className="text-text-secondary hover:text-primary transition-colors duration-300">
-                      {link.label}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        {/* Top Section */}
+        <div className="flex flex-col md:flex-row items-center justify-between gap-8 mb-12">
+          {/* Logo */}
+          <div className="flex items-center gap-2">
+            <Image src="/ZyncPoint_Logo.png" alt="ZyncPoint Logo" width={30} height={30} priority />
+            <span className="text-[30px] leading-none font-bold text-primary-dark">ZYNCPOINT</span>
+          </div>
+
+          {/* Social Links */}
+          <div className="flex items-center gap-4">
+            <span className="text-sm text-text-secondary">Follow us on:</span>
+
+            <Link href="https://www.linkedin.com/company/zyncpoint" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full border border-[rgba(50,184,198,0.2)] text-text-secondary hover:text-primary hover:border-primary transition" aria-label="LinkedIn">
+              <FiLinkedin size={18} />
+            </Link>
+
+            <Link href="https://x.com/_manishmk" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full border border-[rgba(50,184,198,0.2)] text-text-secondary hover:text-primary hover:border-primary transition" aria-label="Twitter">
+              <LuTwitter size={18} />
+            </Link>
+          </div>
         </div>
 
         {/* Footer Bottom */}
-        <div className="pt-[48px] border-t border-[rgba(50,184,198,0.1)] text-center text-text-secondary text-sm">
-          <p>&copy; 2026 ZyncPoint. All rights reserved. | Syncing vision with technology.</p>
+        <div className="pt-12 border-t border-[rgba(50,184,198,0.1)] text-center text-text-secondary text-sm">
+          <p>&copy; 2026 ZyncPoint. All rights reserved.</p>
         </div>
       </div>
     </footer>
