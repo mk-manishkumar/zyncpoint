@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { FiLinkedin } from "react-icons/fi";
+import { FiLinkedin, FiYoutube } from "react-icons/fi";
 import { LuTwitter } from "react-icons/lu";
 
 const Footer = () => {
@@ -20,13 +20,14 @@ const Footer = () => {
           {/* Social Links */}
           <div className="flex items-center gap-4">
             <span className="text-sm text-text-secondary">Follow us on:</span>
-
             <Link href="https://www.linkedin.com/company/zyncpoint" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full border border-[rgba(50,184,198,0.2)] text-text-secondary hover:text-primary hover:border-primary transition" aria-label="LinkedIn">
               <FiLinkedin size={18} />
             </Link>
-
             <Link href="https://x.com/_manishmk" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full border border-[rgba(50,184,198,0.2)] text-text-secondary hover:text-primary hover:border-primary transition" aria-label="Twitter">
               <LuTwitter size={18} />
+            </Link>
+            <Link href="https://www.youtube.com/@zyncpoint" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full border border-[rgba(50,184,198,0.2)] text-text-secondary hover:text-primary hover:border-primary transition" aria-label="Twitter">
+              <FiYoutube size={18} />
             </Link>
           </div>
         </div>
