@@ -4,8 +4,6 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 import Image from "next/image";
-import { MdOutlineDarkMode } from "react-icons/md";
-import { CiLight } from "react-icons/ci";
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -26,6 +24,7 @@ const Navbar = () => {
   const navLinks = [
     { href: "/services", label: "Services" },
     { href: "/about", label: "About" },
+    { href: "/blogs", label: "Blogs" },
     { href: "/contact", label: "Contact" },
   ];
 
