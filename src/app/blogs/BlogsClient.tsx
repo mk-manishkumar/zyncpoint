@@ -28,13 +28,11 @@ const BlogsClient = ({ blogs }: Props) => {
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {blogs.map((blog, index) => (
             <motion.div key={blog.slug} initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: "easeOut", delay: 0.3 + index * 0.08 }}>
-              <Link href={`/blogs/${blog.slug}`} className="group block rounded-2xl border border-[rgba(50,184,198,0.15)] bg-dark-secondary overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl">
-                {/* Cover */}
+              <Link href={`/blogs/${blog.slug}`} className="group block rounded-2xl border border-[rgba(50,184,198,0.15)] bg-dark-secondary overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-xl h-full">
                 <div className="relative aspect-video bg-dark overflow-hidden">{blog.coverImage ? <Image src={blog.coverImage} alt={blog.title} fill className="object-cover transition-transform duration-500 group-hover:scale-105" /> : <div className="flex h-full items-center justify-center text-text-secondary text-sm">No cover image</div>}</div>
 
-                {/* Title */}
                 <div className="p-5">
-                  <h2 className="text-lg font-semibold text-text leading-snug transition-colors duration-300 group-hover:text-primary">{blog.title}</h2>
+                  <h2 className="text-lg font-semibold text-text leading-snug transition-colors duration-300 group-hover:text-primary [display:-webkit-box] [-webkit-line-clamp:2] [-webkit-box-orient:vertical] overflow-hidden">{blog.title}</h2>
                 </div>
               </Link>
             </motion.div>
