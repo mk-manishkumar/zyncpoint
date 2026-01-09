@@ -28,7 +28,7 @@ It positions the element relative to it's normal position and will leave a gap a
 
 This is the HTML code which I am going to use for relative, absolute and fixed position.
 
-```
+```html
     <!DOCTYPE html>
     <html lang="en">
     <head>
@@ -56,7 +56,7 @@ This is the HTML code which I am going to use for relative, absolute and fixed p
 
 Similarly this is the CSS code which I am going to use for relative, absolute and fixed position.
 
-```
+```css
 .container{
     height: 640px;
     background-color: #383CC1;
@@ -82,7 +82,7 @@ This will generate the webpage shown in below picture.
 
 As you can see in the above picture there are four yellow boxes inside a blue container which itself is inside body of the webpage. Now let's target the third box by setting it's position **relative**.
 
-```
+```css
 #box3{
     position: relative;
     top: 30px;
@@ -104,7 +104,7 @@ It positions the element relative to the first parent. If an absolute positioned
 
 Let's again target the third box by changing it's position property to absolute.
 
-```
+```css
 #box3{
     position: absolute;
     top: 60px;
@@ -128,7 +128,7 @@ It positions the element relative to the browser window. Elements with position 
 
 As you can see, scroll bar has appeared in the right side of the screen. Now, let's make the position of third box fixed.
 
-```
+```css
 #box3{
     position: fixed;
     top: 60px;
@@ -159,7 +159,7 @@ It allows the element to stick when the scroll reaches to a certain point. It ke
 
 As you can see in the above picture, navigation bar is just below that picture. Now we will change the position property of navigation to **sticky**.
 
-```
+```css
 .nav{
     position: sticky;
     top: 0;
@@ -173,7 +173,7 @@ As you can see in the above picture, after giving the position property of nav e
 
 One thing to note about sticky position is that not all browsers currently support sticky position. Only around 90% of browsers support it and that is only if you prefix it as well. In order to prefix the element you need to use these prefixes.
 
-```
+```css
 .nav{
     position: sticky;
     position: -webkit-sticky;
@@ -187,7 +187,7 @@ One thing to note about sticky position is that not all browsers currently suppo
 
 Now, to get around the remaining 10% of browsers that don't support it at all even with the prefix, what you need to do is to add support property for your CSS.
 
-```
+```css
 @supports (position: sticky){
     .nav{
         position: sticky;

@@ -39,4 +39,3 @@ Suppose you are using your computer to purchase a smartphone online from Amazon.
 
 So, this is the overall working principle of website. I didn't go that deep because it can't be covered in one blog. But in the next few blogs, I will definitely cover the deep aspects of the website functionality.
 
-#BlogsWithCC  #iWriteCode

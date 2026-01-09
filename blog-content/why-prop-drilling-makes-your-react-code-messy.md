@@ -13,7 +13,7 @@ You start with a simple React app, everything is clean, and then suddenly you're
 
 Basically, it's when you pass props through multiple components that don't even need them, just to get the data to a deeply nested child component. Think of it like this:
 
-```
+```Javascript
 // Parent has the data
 function App() {
   const user = { name: "John", email: "john@example.com" };
@@ -50,7 +50,7 @@ See the problem? The header and navigation are just middlemen doing nothing usef
 ## Better Solutions
 ### Context API for shared state:
 
-```
+```Javascript
 const UserContext = createContext();
 
 function App() {

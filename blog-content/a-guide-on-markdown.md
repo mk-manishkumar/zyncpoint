@@ -17,14 +17,13 @@ It's widely used for Readme files (Github) and documentation. It's also used for
 
 To give the headings we just simply need to add `#` and a space just before the heading. Similar to HTML headings, markdown also has 6 level of headings. In markdown, as we decrease the size of heading, we need to add more `#` before it.
 
-```
+```md
   # Heading 1
   ## Heading 2
   ### Heading 3
   #### Heading 4
   ##### Heading 5
   ###### Heading 6
-
 ```
 
 It will give the following output :
@@ -36,16 +35,14 @@ It will give the following output :
 
 To make the text *italics* we have two options. Either we need to use one **astreisk(*)** symbol both side of the text or one **underscore(_)** symbol both side of the text.
 
-```
-    *text*
-
+```md
+*text*
 ```
 
 OR
 
 ```
-    _text_
-
+ _text_
 ```
 
 Both of them will give the following output :
@@ -57,16 +54,14 @@ Both of them will give the following output :
 
 To make the text **bold** we have again two options. Either we need to use two **astreisk(*)** symbol both side of the text or two **underscore(_)** symbol both side of the text.
 
-```
-    *Bold text*
-
+```md
+ *Bold text*
 ```
 
 OR
 
-```
-    _Bold text_
-
+```md
+ _Bold text_
 ```
 
 Both of them will give the following output :
@@ -78,9 +73,8 @@ Both of them will give the following output :
 
 To make the text ~~strikethrough~~ we need to use double **tilde(~)** on both side of the text.
 
-```
-    ~~text~~
-
+```md
+~~text~~
 ```
 
 This will give the following output:
@@ -102,9 +96,8 @@ It's equivalent to `<hr>` tag of HTML.
 
 To write blockquotes we use **greater than (>)** symbol just before the text.
 
-```
-    >There is no substitute of hard work.
-
+```md
+>There is no substitute of hard work.
 ```
 
 OUTPUT :
@@ -116,9 +109,8 @@ OUTPUT :
 
 To display the link we need to use **bracket [ ]** in which text part will be written and just after that **parenthesis ( )** will be used in which link will be written.
 
-```
-    [Google](https://www.google.co.in/)
-
+```md
+[Google](https://www.google.co.in/)
 ```
 
 OUTPUT :
@@ -128,9 +120,8 @@ OUTPUT :
 
 We can add a **hover** feature on the text so that when we hover over the text, it displays the title of that website. For that we just need to write the title of the website just after the link inside double quote inside the parenthesis. There should be a space between link and title of the website.
 
-```
-    [Google](https://www.google.co.in "Google")    
-
+```md
+[Google](https://www.google.co.in "Google")    
 ```
 OUTPUT :
 
@@ -143,9 +134,8 @@ As you can see, I have hovered the cursor over the text and it's showing the tit
 ## Image 
 To insert an image the syntax is similar to the link. Just we need to add **exclamation (!)** symbol before the text bracket.
 
-```
-    ![Google](https://www.google.co.in/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png)
-
+```md
+![Google](https://www.google.co.in/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png)
 ```
 
 OUTPUT :
@@ -159,15 +149,14 @@ OUTPUT :
 
 To write ordered list we just need to use numbers.
 
-```
-    1. Item 1
-    2. Item 2
-    3. Item 3
-        1. Nested Item1
-        2. Nested Item2
-    4. Item 4
-    5. Item 5
-
+```md
+1. Item 1
+2. Item 2
+3. Item 3
+    1. Nested Item1
+    2. Nested Item2
+4. Item 4
+5. Item 5
 ```
 
 OUTPUT :
@@ -180,15 +169,14 @@ OUTPUT :
 
 To write ordered list we need to use **astreisk (*)** or **hyphen (-)** symbol.
 
-```
-    - item A
-    - item B
-    - item C
-        * nested item1
-        * nested item2
-    - item D
-    - item E
-
+```md
+- item A
+- item B
+- item C
+    * nested item1
+    * nested item2
+- item D
+- item E
 ```
 
 OUTPUT :
@@ -200,9 +188,8 @@ OUTPUT :
 
 We use **backtick (`)** symbol to write single line code or some specific tags.
 
-```
-    `<p> All is Well ! </p>`
-
+```md
+`<p> All is Well ! </p>`
 ```
 
 OUTPUT : 
@@ -216,7 +203,8 @@ We use **backtick (`)** symbol 3 times to write multi-line code snippets.
 
 
 
-    ```console.log("Hello World");
+    ```
+    console.log("Hello World");
     ```
 
 
@@ -256,11 +244,10 @@ So, adding the language name above makes it look more cool and colorful.
 
 To create task lists we need to use **hyphen (-)** symbol then **bracket []** inside which if our task is incomplete then put  `x` there or if it's complete then we need to just leave it empty. And after the bracket we need to just put the name of the task,
 
-```
-    - [x] Task 1
-    - [x] Task 2
-    - [ ] Task 3
-
+```md
+- [x] Task 1
+- [x] Task 2
+- [ ] Task 3
 ```
 
 OUTPUT :
@@ -274,12 +261,11 @@ OUTPUT :
 
 For tables, syntax is kind of tough. That's the reason it's not recommended. But yeah, it definitely gives the nice outlook.
 
-```
+```md
     | Syntax      | Description | Test Text     |
     | :---        |    :----:   |          ---: |
     | Header      | Title       | Here's this   |
     | Paragraph   | Text        | And more      |
-
 ```
 
 OUTPUT :

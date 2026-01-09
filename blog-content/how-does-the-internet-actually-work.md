@@ -28,8 +28,3 @@ If you head over to **submarinecable.com**, you can view all of the underwater c
 ![02.jpg](https://cdn.hashnode.com/res/hashnode/image/upload/v1658753860133/BNhtwZQW4.jpg align="left")
 
 So once I have gotten the IP address of the website that I want to access, then my browser sends another message through ISP via Internet Backbone to the server that is located at that address, which is of course the Google server. And on this server, there are all of the files I would need in order to be able to view the Google homepage. The server then sends all of those files back to me through the internet backbone and I get to see the Google homepage in my browser. And all of these happen in a matter of milliseconds.
-
-
-
-
-#BlogsWithCC     #iWriteCode

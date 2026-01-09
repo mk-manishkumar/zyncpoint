@@ -39,7 +39,7 @@ Let me walk you through how I solved this using Tailwind CSS classes (though the
 </div>
 ```
 
-Let's break down what's happening here:
+### Let's break down what's happening here:
 
 **The parent container** gets three key classes: `flex`, `flex-col`, and `min-h-screen`. Together, these create a vertical flex container that spans the full height of the viewport. Think of it as setting up the playing field.
 

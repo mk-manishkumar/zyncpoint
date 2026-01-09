@@ -11,36 +11,33 @@ Everyone adds carousels to their websites. Most of the time, people simply insta
 ## 🚀 Step 1: Create a React + TypeScript project with Vite
 
 
-```
+```cmd
 npm create vite@latest my-carousel --template react-ts
 cd my-carousel
 ```
 > If you want plain JavaScript, replace react-ts with react.
 
-------------------
 
 ## 🎨 Step 2: Install Tailwind CSS
 
 To install Tailwind CSS, follow the instructions at the [link](https://tailwindcss.com/docs/installation/using-vite)
 
-------------------
 
 ## 🖼 Step 3: Load Your Images
 
 Dump your images into `public/carouselImages/`. Now set them up:
 
-```
+```Javascript
 const carouselImages = [
   "/carouselImages/carousel-1.jpg",
   "/carouselImages/carousel-2.jpg",
   "/carouselImages/carousel-3.jpg",
 ];
 ```
----------------------
 
 ## ⚛️ Step 4: The React Component
 
-```
+```Javascript
 import { useState, useEffect } from "react";
 
 const carouselImages = [
@@ -107,7 +104,6 @@ export const Carousel = () => {
 };
 ```
 
---------------------
 
 ## 🧠 How Does It Work?
 
@@ -115,7 +111,7 @@ Let’s deconstruct this:
 
 ### 🔁 prevSlide
 
-```
+```Javascript
 setCurrent((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
 ```
 
@@ -123,7 +119,7 @@ If you’re on the first slide, wrap to the last. Else, go to the previous. Simp
 
 ### 🔂 nextSlide
 
-```
+```Javascript
 setCurrent((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
 ```
 
@@ -131,19 +127,18 @@ If you’re on the last slide, wrap to the first. Otherwise, move forward. This 
 
 ### 🎯 goToSlide
 
-```
+```Javascript
 (index: number) => setCurrent(index);
 ```
 
 This allows direct jumping to a slide. Used in the dot indicators at the bottom.
 
----------------------
 
 ## 🖼 How Slides Are Actually Rendered
 
 This is where the clean animation happens:
 
-```
+```html
 <div
   key={index}
   className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
@@ -159,11 +154,10 @@ All slides are stacked on top of each other.
 
 Instead of unmounting and remounting, you simply fade between preloaded images. 
 
---------------
 
 ## 🕒 Auto-Play
 
-```
+```Javascript
 useEffect(() => {
   const interval = setInterval(nextSlide, 5000);
   return () => clearInterval(interval);
@@ -172,7 +166,6 @@ useEffect(() => {
 
 Every 5 seconds, nextSlide() is triggered.
 
----------------------
 
 ## 💬 Final Thoughts
 
