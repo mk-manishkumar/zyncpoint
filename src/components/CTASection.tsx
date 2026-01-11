@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "motion/react";
+import { toast, Bounce } from "react-toastify";
 
 const CTASection = () => {
   const [form, setForm] = useState({
@@ -13,13 +14,80 @@ const CTASection = () => {
     message: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+
+    if (!form.name || !form.email || !form.message) {
+      toast.error("Please fill in all required fields.", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+        transition: Bounce,
+      });
+      return;
+    }
+
+    try {
+      setIsSubmitting(true);
+
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok || !data.success) throw new Error("Submission failed");
+
+      toast.success("Message sent successfully!", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+        transition: Bounce,
+      });
+
+      setForm({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        projectType: "",
+        message: "",
+      });
+    } catch (error) {
+      toast.error("Failed to send message. Please try again.", {
+        position: "top-right",
+        autoClose: 2000,
+        hideProgressBar: false,
+        closeOnClick: false,
+        pauseOnHover: true,
+        draggable: true,
+        theme: "light",
+        transition: Bounce,
+      });
+      if (process.env.NODE_ENV === "development") console.error("Contact form submission error:", error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="scroll-mt-22.5 px-6 py-20 bg-linear-to-br from-[rgba(50,184,198,0.1)] to-[rgba(255,107,53,0.1)] border-t border-b border-[rgba(50,184,198,0.2)] relative overflow-hidden">
-      {/* Background Animated Orbs */}
       <div className="absolute inset-0 pointer-events-none opacity-30">
         <motion.div className="absolute w-96 h-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(99,102,241,0.2) 0%, transparent 70%)", filter: "blur(80px)", top: "5%", right: "10%" }} animate={{ x: ["0vw", "-15vw", "0vw"], y: ["0vh", "10vh", "0vh"], scale: [1, 1.2, 1] }} transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }} />
 
@@ -27,7 +95,6 @@ const CTASection = () => {
       </div>
 
       <div className="max-w-175 mx-auto relative z-10">
-        {/* Heading */}
         <div className="text-center mb-14">
           <motion.h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6 text-text" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6, ease: "easeOut" }}>
             Ready to Zync Your Vision?
@@ -37,44 +104,38 @@ const CTASection = () => {
           </motion.p>
         </div>
 
-        {/* Form */}
-        <motion.form className="bg-dark-secondary border border-[rgba(50,184,198,0.2)] rounded-2xl p-8 md:p-12 shadow-lg" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}>
+        <motion.form onSubmit={handleSubmit} className="bg-dark-secondary border border-[rgba(50,184,198,0.2)] rounded-2xl p-8 md:p-12 shadow-lg" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.7, ease: "easeOut", delay: 0.3 }}>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-            {/* Name */}
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.4 }}>
               <label htmlFor="name" className="block text-sm mb-2 text-text-secondary">
                 Full Name <span className="text-accent">*</span>
               </label>
-              <input type="text" name="name" value={form.name} onChange={handleChange} placeholder="John Doe" required className="w-full rounded-[10px] bg-dark px-4 py-3.5 scroll-py-3.5 text-text placeholder:text-text-secondary/60 border border-[rgba(50,184,198,0.2)] focus:outline-none focus:border-primary transition-colors duration-300" />
+              <input type="text" name="name" value={form.name} onChange={handleChange} required className="w-full rounded-[10px] bg-dark px-4 py-3.5 text-text border border-[rgba(50,184,198,0.2)] focus:outline-none focus:border-primary transition-colors duration-300" placeholder="Enter your full name" />
             </motion.div>
 
-            {/* Email */}
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.5 }}>
               <label htmlFor="email" className="block text-sm mb-2 text-text-secondary">
                 Email Address <span className="text-accent">*</span>
               </label>
-              <input type="email" name="email" value={form.email} onChange={handleChange} placeholder="you@company.com" required className="w-full rounded-[10px] bg-dark px-4 py-3.5 text-text placeholder:text-text-secondary/60 border border-[rgba(50,184,198,0.2)] focus:outline-none focus:border-primary transition-colors duration-300" />
+              <input type="email" name="email" value={form.email} onChange={handleChange} required className="w-full rounded-[10px] bg-dark px-4 py-3.5 text-text border border-[rgba(50,184,198,0.2)] focus:outline-none focus:border-primary transition-colors duration-300" placeholder="Enter your email" />
             </motion.div>
 
-            {/* Phone */}
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.6 }}>
               <label htmlFor="phone" className="block text-sm mb-2 text-text-secondary">
-                Phone Number <span className="text-text-secondary/60">(optional)</span>
+                Phone Number
               </label>
-              <input type="tel" name="phone" value={form.phone} onChange={handleChange} placeholder="+91 98765 43210" className="w-full rounded-[10px] bg-dark px-4 py-3.5 text-text placeholder:text-text-secondary/60 border border-[rgba(50,184,198,0.2)] focus:outline-none focus:border-primary transition-colors duration-300" />
+              <input type="tel" name="phone" value={form.phone} onChange={handleChange} className="w-full rounded-[10px] bg-dark px-4 py-3.5 text-text border border-[rgba(50,184,198,0.2)] focus:outline-none focus:border-primary transition-colors duration-300" placeholder="Enter your phone number" />
             </motion.div>
 
-            {/* Company */}
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.7 }}>
               <label htmlFor="company" className="block text-sm mb-2 text-text-secondary">
                 Company / Brand
               </label>
-              <input type="text" name="company" value={form.company} onChange={handleChange} placeholder="ZyncPoint" className="w-full rounded-[10px] bg-dark px-4 py-3.5 text-text placeholder:text-text-secondary/60 border border-[rgba(50,184,198,0.2)] focus:outline-none focus:border-primary transition-colors duration-300" />
+              <input type="text" name="company" value={form.company} onChange={handleChange} className="w-full rounded-[10px] bg-dark px-4 py-3.5 text-text border border-[rgba(50,184,198,0.2)] focus:outline-none focus:border-primary transition-colors duration-300" placeholder="Enter your company or brand name" />
             </motion.div>
 
-            {/* Project Type */}
             <motion.div className="md:col-span-2" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.8 }}>
-              <label htmlFor="project-type" className="block text-sm mb-2 text-text-secondary">
+              <label htmlFor="projectType" className="block text-sm mb-2 text-text-secondary">
                 Project Type
               </label>
               <select name="projectType" value={form.projectType} onChange={handleChange} className="w-full rounded-[10px] bg-dark px-4 py-3.5 text-text border border-[rgba(50,184,198,0.2)] focus:outline-none focus:border-primary transition-colors duration-300">
@@ -87,19 +148,17 @@ const CTASection = () => {
               </select>
             </motion.div>
 
-            {/* Message */}
             <motion.div className="md:col-span-2" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 0.9 }}>
               <label htmlFor="message" className="block text-sm mb-2 text-text-secondary">
                 Project Details <span className="text-accent">*</span>
               </label>
-              <textarea name="message" value={form.message} onChange={handleChange} placeholder="Tell us about your goals, timeline, and expectations..." rows={5} required className="w-full rounded-[10px] bg-dark px-4 py-3.5 text-text placeholder:text-text-secondary/60 border border-[rgba(50,184,198,0.2)] focus:outline-none focus:border-primary resize-none transition-colors duration-300" />
+              <textarea name="message" value={form.message} onChange={handleChange} required rows={5} className="w-full rounded-[10px] bg-dark px-4 py-3.5 text-text border border-[rgba(50,184,198,0.2)] focus:outline-none focus:border-primary resize-none transition-colors duration-300" placeholder="Enter your proposal" />
             </motion.div>
           </div>
 
-          {/* Submit */}
           <motion.div className="text-center" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.5, delay: 1 }}>
-            <motion.button type="submit" className="inline-flex items-center justify-center bg-primary text-white px-3 py-2 rounded-full font-semibold hover:bg-primary-light cursor-pointer transition-all duration-300" whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
-              Send Message
+            <motion.button type="submit" disabled={isSubmitting} className="cursor-pointer inline-flex items-center justify-center bg-primary text-white px-3 py-2 rounded-full font-semibold hover:bg-primary-light transition-all duration-300 disabled:opacity-60 disabled:cursor-not-allowed" whileHover={{ scale: 1.05, y: -2 }} whileTap={{ scale: 0.95 }}>
+              {isSubmitting ? "Sending..." : "Send Message"}
             </motion.button>
 
             <p className="mt-4 text-sm text-text-secondary">We typically respond within 24 hours.</p>
