@@ -29,7 +29,7 @@ Let me walk you through how I solved this using Tailwind CSS classes (though the
     <!-- Your header content -->
   </header>
   
-  <main class="flex-grow">
+  <main class="grow">
     <!-- Your main content -->
   </main>
   

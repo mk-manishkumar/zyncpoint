@@ -63,7 +63,7 @@ export const Carousel = () => {
   }, []);
 
   return (
-    <div className="relative w-full aspect-[16/6] overflow-hidden">
+    <div className="relative w-full aspect-16/6 overflow-hidden">
       {carouselImages.map((image, index) => (
         <div
           key={index}
