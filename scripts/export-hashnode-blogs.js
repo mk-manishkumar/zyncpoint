@@ -2,9 +2,7 @@ import fs from "node:fs";
 import path from "node:path";
 
 const HASHNODE_API = "https://gql.hashnode.com";
-
 const PUBLICATION_HOST = "manishmk.hashnode.dev";
-
 const OUTPUT_DIR = path.join(process.cwd(), "blog-content");
 
 const query = `
@@ -50,7 +48,7 @@ async function fetchBlogs() {
 }
 
 function escapeQuotes(value = "") {
-  return value.replace(/"/g, '\\"');
+  return value.replaceAll('"', String.raw`\"`);
 }
 
 function toMarkdownFile(post) {
@@ -72,20 +70,27 @@ async function exportBlogs() {
   }
 
   const posts = await fetchBlogs();
+  let createdCount = 0;
 
   posts.forEach((post) => {
     const filePath = path.join(OUTPUT_DIR, `${post.slug}.md`);
-    const content = toMarkdownFile(post);
 
+    if (fs.existsSync(filePath)) {
+      return; // ⛔ skip existing blog
+    }
+
+    const content = toMarkdownFile(post);
     fs.writeFileSync(filePath, content, "utf8");
-    console.log(`✔ Exported: ${post.slug}.md`);
+    createdCount++;
+
+    if (process.env.NODE_ENV === "development") console.log(`New blog added: ${post.slug}.md`);
   });
 
-  console.log(`\n✅ Exported ${posts.length} blogs to /blog-content`);
+  if (process.env.NODE_ENV === "development") console.log(`\n ${createdCount} new blog(s) added. Total fetched: ${posts.length}`);
 }
 
 try {
   await exportBlogs();
 } catch (err) {
-  console.error("❌ Export failed:", err.message);
+  console.error("Export failed:", err.message);
 }
