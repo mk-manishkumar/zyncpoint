@@ -2,6 +2,7 @@
 title: "🧠 How to Build a Carousel in ReactJS with Tailwind"
 slug: "how-to-build-a-carousel-in-reactjs-with-tailwind"
 excerpt: "Everyone adds carousels to their websites. Most of the time, people simply install a library like Slick Carousel, add a few props, and move on. However, that approach often adds unnecessary code. In this guide, we’ll learn how to build a clean, light..."
+tags: ["react"]
 date: "2025-07-04T08:23:41.000Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1767785212774/9386df5d-deb5-4766-bdba-de56c11a4023.webp"
 ---

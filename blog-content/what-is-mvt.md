@@ -2,6 +2,7 @@
 title: "What is MVT ?"
 slug: "what-is-mvt"
 excerpt: "MVT is a design pattern that separates an application into 3 main logical components: Model, View and Template. Each of these components has its own role in a project. Now before deep diving into all these three components, let's first understand wha..."
+tags: ["design-pattern"]
 date: "2022-12-05T18:05:58.105Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1677777793920/4271b929-12b4-49a0-8c59-e1419973d98f.png"
 ---

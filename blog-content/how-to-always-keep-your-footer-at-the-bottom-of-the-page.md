@@ -3,6 +3,7 @@ title: "How to Always Keep Your Footer at the Bottom of the Page"
 slug: "how-to-always-keep-your-footer-at-the-bottom-of-the-page"
 excerpt: "We've all been there. You're crafting what you think is a beautiful webpage, header at the top, some content in the middle, and a footer completing the design at the bottom. Everything looks perfect... until you preview it on a larger screen.
 Suddenl..."
+tags: ["css"]
 date: "2026-01-07T11:49:53.691Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1767786126191/19ae4ff4-5d10-4b35-b7c0-a82c14214581.png"
 ---

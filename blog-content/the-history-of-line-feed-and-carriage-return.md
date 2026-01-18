@@ -2,6 +2,7 @@
 title: "The History of Line Feed and Carriage Return"
 slug: "the-history-of-line-feed-and-carriage-return"
 excerpt: "Get ready to learn about the wild world of line feed and carriage return, the dynamic duo of text formatting! You might think they're just boring old control characters, but oh boy, do they have a story to tell. Back in the day, typewriters ruled the..."
+tags: ["computing"]
 date: "2023-03-03T12:55:47.503Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1677847866625/a23cf06a-e3dc-4917-8458-d94faebab229.jpeg"
 ---

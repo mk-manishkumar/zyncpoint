@@ -3,6 +3,7 @@ title: "Creating a Simple Text Editor Using C Programming Language"
 slug: "creating-a-simple-text-editor-using-c-programming-language"
 excerpt: "As someone who is interested in programming and exploring different programming languages, I decided to create a simple text editor using the C programming language. This project allowed me to gain a deeper understanding of the language while also al..."
 date: "2023-03-07T17:56:43.670Z"
+tags: ["C"]
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1678211523628/4aaad7cd-4444-4bf1-9c8a-b42e2c00b37d.png"
 ---
 

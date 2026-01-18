@@ -5,6 +5,7 @@ excerpt: "What is Git
 Git is a tool that allows you to version control.
 Suppose we create a file in which Javascript code is written on 20th July 2022. Then on 21st July we did some minute changes in it. And then again on 22nd July, 23rd July and 24th July we ..."
 date: "2022-07-21T07:08:39.261Z"
+tags: ["git"]
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1658336851733/0dflkZYbk.png"
 ---
 

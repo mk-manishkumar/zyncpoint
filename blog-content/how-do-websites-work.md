@@ -3,6 +3,7 @@ title: "How Do Websites Work"
 slug: "how-do-websites-work"
 excerpt: "In the last blog, I have written about how the internet works. Today I will illustrate about how exactly do websites work. What HTML, CSS and Javascript do exactly. Now in order to access a webpage, we need a browser. And that can be Chrome, Firefox,..."
 date: "2022-07-28T15:08:41.915Z"
+tags: ["web"]
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1663439171329/CUe0KPXvJ.png"
 ---
 

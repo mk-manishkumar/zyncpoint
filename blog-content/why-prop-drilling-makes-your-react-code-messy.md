@@ -1,8 +1,8 @@
 ---
 title: "Why Prop Drilling Makes Your React Code Messy"
 slug: "why-prop-drilling-makes-your-react-code-messy"
-excerpt: "You start with a simple React app, everything is clean, and then suddenly you're passing props through five components to get some data where it needs to go. It's like being forced to pass a message through people who don't need to hear it.
-What's Pr..."
+excerpt: "You start with a simple React app, everything is clean, and then suddenly you're passing props through five components to get some data where it needs to go. It's like being forced to pass a message through people who don't need to hear it. What's Pr..."
+tags: ["react"]
 date: "2025-07-07T17:33:35.000Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1767785208955/a5cf9b47-d378-452a-ac84-f79702525359.webp"
 ---

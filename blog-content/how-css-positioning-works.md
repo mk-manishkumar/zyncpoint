@@ -3,6 +3,7 @@ title: "How CSS Positioning Works"
 slug: "how-css-positioning-works"
 excerpt: "Before learning about how CSS positioning works let's understand why positioning is important. As you know, by default, HTML elements appear on the webpage in the same sequence as they are in the HTML code. HTML doesn't have that high level of functi..."
 date: "2022-07-23T14:48:34.571Z"
+tags: ["css"]
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1658587572598/LxJ4h9st2.png"
 ---
 

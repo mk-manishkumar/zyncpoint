@@ -2,6 +2,7 @@
 title: "Why HTML is not a Programming Language?"
 slug: "why-html-is-not-a-programming-language"
 excerpt: "HTML (Hypertext Markup Language) is a markup language widely used in web development to structure web pages, define their content and layout, and establish their relationships with other web resources. Although HTML has some scripting capabilities, i..."
+tags: ["html"]
 date: "2023-03-03T07:38:30.473Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1677828637161/f93f2fe8-988c-4a2b-9644-0331816689d0.jpeg"
 ---

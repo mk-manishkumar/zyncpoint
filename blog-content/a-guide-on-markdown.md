@@ -3,6 +3,7 @@ title: "A Guide on Markdown"
 slug: "a-guide-on-markdown"
 excerpt: "Markdown is a lightweight markup language with a plain text formatting syntax. So, like HTML it's a markup language but we don't use tags or anything like that here. It's a very readable syntax and it can be converted into HTML/XHTML as well as other..."
 date: "2022-07-24T07:21:05.801Z"
+tags: ["markdown"]
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1658598080778/VIKukyzewP.webp"
 ---
 

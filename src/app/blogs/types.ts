@@ -1,5 +1,8 @@
 export type BlogMeta = {
-  slug: string;
   title: string;
-  coverImage: string;
+  slug: string;
+  excerpt?: string;
+  date: string;
+  coverImage?: string;
+  tags?: string[];
 };

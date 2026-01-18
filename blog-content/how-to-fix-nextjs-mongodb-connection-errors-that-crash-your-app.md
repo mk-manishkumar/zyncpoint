@@ -5,6 +5,7 @@ excerpt: "Alright, so you built a Next.js app with MongoDB. It works on your lap
 Then a week later... BOOM. App's down. Users can't log in. You're panicking.
 You check MongoDB and see: \"Too many connections\"
 What the hell..."
+tags: ["nextjs"]
 date: "2026-01-13T16:33:36.530Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1768321713741/c42052dd-915c-45f2-889d-35e274c567a8.jpeg"
 ---
