@@ -1,63 +1,151 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useEffect, useRef, useState } from "react";
 
-interface WhyItem {
-  icon: string;
-  title: string;
-  description: string;
-}
-
-const whyItems: WhyItem[] = [
-  { icon: "⚡", title: "Performance-Driven", description: "Speed, efficiency, and optimization at every level" },
-  { icon: "🔒", title: "Security First", description: "Enterprise-grade security practices and compliance" },
-  { icon: "🤝", title: "Collaborative Approach", description: "Partners in your success, not just vendors" },
-  { icon: "📈", title: "Proven Results", description: "Measurable impact on business growth and ROI" },
-  { icon: "🔬", title: "Innovation-Focused", description: "Always at the forefront of technology" },
-  { icon: "🎯", title: "Precision Execution", description: "Meticulous attention to every detail" },
+const features = [
+  {
+    icon: "⚡",
+    title: "Performance-Driven",
+    description: "Speed, efficiency, and optimization at every level",
+    color: "from-accent to-accent/60",
+    delay: 0.1,
+  },
+  {
+    icon: "🔒",
+    title: "Security First",
+    description: "Enterprise-grade security practices and compliance",
+    color: "from-primary to-primary-light",
+    delay: 0.2,
+  },
+  {
+    icon: "🤝",
+    title: "Collaborative Approach",
+    description: "Partners in your success, not just vendors",
+    color: "from-accent to-primary",
+    delay: 0.3,
+  },
+  {
+    icon: "📈",
+    title: "Proven Results",
+    description: "Measurable impact on business growth and ROI",
+    color: "from-primary-light to-accent",
+    delay: 0.4,
+  },
+  {
+    icon: "🔬",
+    title: "Innovation-Focused",
+    description: "Always at the forefront of technology",
+    color: "from-primary to-accent/80",
+    delay: 0.5,
+  },
+  {
+    icon: "🎯",
+    title: "Precision Execution",
+    description: "Precise attention to every detail",
+    color: "from-accent/80 to-primary-light",
+    delay: 0.6,
+  },
 ];
 
-const WhyChoose = () => {
+export default function WhyChooseUs() {
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+  const [isVisible, setIsVisible] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => entry.isIntersecting && setIsVisible(true), { threshold: 0.1 });
+
+    const currentSection = sectionRef.current;
+
+    if (currentSection) observer.observe(currentSection);
+
+    return () => {
+      if (currentSection) observer.unobserve(currentSection);
+    };
+  }, []);
+
   return (
-    <section className="scroll-mt-22.5 px-6 py-16 bg-dark-secondary relative overflow-hidden">
-      {/* Background Animated Orbs */}
-      <div className="absolute inset-0 pointer-events-none opacity-40">
-        <motion.div className="absolute w-80 h-80 rounded-full" style={{ background: "radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)", filter: "blur(60px)", top: "10%", left: "5%" }} animate={{ x: ["0vw", "15vw", "5vw", "0vw"], y: ["0vh", "10vh", "5vh", "0vh"], scale: [1, 1.1, 1.05, 1] }} transition={{ duration: 20, repeat: Infinity, ease: "easeInOut" }} />
-
-        <motion.div className="absolute w-96 h-96 rounded-full" style={{ background: "radial-gradient(circle, rgba(168,85,247,0.12) 0%, transparent 70%)", filter: "blur(70px)", bottom: "10%", right: "10%" }} animate={{ x: ["0vw", "-10vw", "-5vw", "0vw"], y: ["0vh", "-8vh", "-4vh", "0vh"], scale: [1, 1.15, 1.08, 1] }} transition={{ duration: 18, repeat: Infinity, ease: "easeInOut", delay: 1 }} />
+    <section ref={sectionRef} className="relative py-24 lg:py-32 bg-dark overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 opacity-30">
+        <motion.div className="absolute top-1/4 -right-48 w-96 h-96 bg-primary rounded-full blur-[140px]" animate={{ scale: [1, 1.3, 1], opacity: [0.2, 0.4, 0.2] }} transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }} />
+        <motion.div className="absolute -bottom-32 -left-48 w-96 h-96 bg-accent rounded-full blur-[140px]" animate={{ scale: [1.3, 1, 1.3], opacity: [0.3, 0.5, 0.3] }} transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }} />
       </div>
 
-      {/* Heading */}
-      <div className="text-center mb-16 relative z-10">
-        <motion.h2 className="text-4xl md:text-5xl font-bold mb-4 text-text" initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6, ease: "easeOut" }}>
-          Why Choose ZyncPoint
-        </motion.h2>
+      {/* Decorative Grid */}
+      <div className="absolute inset-0 opacity-[0.02]" style={{ backgroundImage: ` linear-gradient(to right, #6366f1 1px, transparent 1px), linear-gradient(to bottom, #6366f1 1px, transparent 1px)`, backgroundSize: "60px 60px" }} />
 
-        <motion.p className="text-base md:text-lg text-text-secondary" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-100px" }} transition={{ duration: 0.6, ease: "easeOut", delay: 0.2 }}>
-          Key advantages that set us apart
-        </motion.p>
-      </div>
-
-      {/* Cards */}
-      <div className="max-w-300 mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 relative z-10">
-        {whyItems.map((item, index) => (
-          <motion.div key={item.title} className="text-center group" initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: "-50px" }} transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.1 }}>
-            <motion.div className="text-6xl mb-4 inline-block" whileHover={{ scale: 1.2, rotate: [0, -10, 10, -10, 0] }} transition={{ rotate: { duration: 0.5 }, scale: { duration: 0.2 } }}>
-              {item.icon}
-            </motion.div>
-
-            <motion.h3 className="text-xl font-semibold mb-4 text-text" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: index * 0.1 + 0.2 }}>
-              {item.title}
-            </motion.h3>
-
-            <motion.p className="text-text-secondary leading-relaxed" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ duration: 0.4, delay: index * 0.1 + 0.3 }}>
-              {item.description}
-            </motion.p>
+      <div className="relative z-10 w-full max-w-350 mx-auto px-6 lg:px-12">
+        {/* Section Header */}
+        <div className="text-center mb-16 lg:mb-24">
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={isVisible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="inline-flex items-center gap-3 mb-6">
+            <div className="h-px w-8 bg-linear-to-r from-transparent via-primary to-transparent" />
+            <span className="text-xs tracking-[0.3em] text-text-secondary font-medium uppercase">Why Choose Us</span>
+            <div className="h-px w-8 bg-linear-to-r from-transparent via-primary to-transparent" />
           </motion.div>
-        ))}
+
+          <motion.h2 initial={{ opacity: 0, y: 30 }} animate={isVisible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.2 }} className="text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6">
+            Why Choose <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary-light to-accent">ZyncPoint</span>
+          </motion.h2>
+
+          <motion.p initial={{ opacity: 0, y: 20 }} animate={isVisible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.4 }} className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto">
+            Key advantages that set us apart
+          </motion.p>
+        </div>
+
+        {/* Features Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {features.map((feature, index) => (
+            <motion.div key={feature.title} initial={{ opacity: 0, y: 40 }} animate={isVisible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: feature.delay }} onHoverStart={() => setHoveredIndex(index)} onHoverEnd={() => setHoveredIndex(null)} className="group relative">
+              {/* Card Background with Border Effect */}
+              <div className="absolute inset-0 bg-linear-to-br from-dark-secondary to-dark rounded-2xl" />
+              <motion.div className={`absolute inset-0 bg-linear-to-br ${feature.color} rounded-2xl opacity-0 group-hover:opacity-10 transition-opacity duration-500`} />
+
+              {/* Animated Border */}
+              <motion.div className="absolute inset-0 rounded-2xl" style={{ background: `linear-gradient(135deg, transparent 0%, ${hoveredIndex === index ? "#6366f1" : "transparent"} 50%, transparent 100%)`, padding: "1px" }} animate={{ background: hoveredIndex === index ? ["linear-gradient(0deg, transparent, #6366f1, transparent)", "linear-gradient(360deg, transparent, #6366f1, transparent)"] : "linear-gradient(135deg, transparent, transparent, transparent)" }} transition={{ duration: 2, repeat: Infinity }}>
+                <div className="w-full h-full bg-dark-secondary rounded-2xl" />
+              </motion.div>
+
+              {/* Content */}
+              <div className="relative p-8 lg:p-10">
+                {/* Icon */}
+                <motion.div className="mb-6 relative inline-block" animate={hoveredIndex === index ? { scale: [1, 1.1, 1], rotate: [0, -5, 5, 0] } : {}} transition={{ duration: 0.5 }}>
+                  <div className={`w-16 h-16 rounded-xl bg-linear-to-br ${feature.color} p-0.5`}>
+                    <div className="w-full h-full bg-dark-secondary rounded-xl flex items-center justify-center">
+                      <span className="text-3xl">{feature.icon}</span>
+                    </div>
+                  </div>
+
+                  {/* Glow Effect */}
+                  <motion.div className={`absolute inset-0 rounded-xl bg-linear-to-br ${feature.color} blur-xl -z-10`} animate={hoveredIndex === index ? { opacity: [0, 0.5, 0] } : { opacity: 0 }} transition={{ duration: 1.5, repeat: Infinity }} />
+                </motion.div>
+
+                {/* Title */}
+                <h3 className="text-xl md:text-2xl font-bold text-text mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-linear-to-r group-hover:from-primary group-hover:to-primary-light transition-all duration-300">{feature.title}</h3>
+
+                {/* Description */}
+                <p className="text-text-secondary leading-relaxed group-hover:text-text transition-colors duration-300">{feature.description}</p>
+
+                {/* Hover Indicator */}
+                <motion.div className="mt-6 flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" animate={hoveredIndex === index ? { x: [0, 5, 0] } : { x: 0 }} transition={{ duration: 1, repeat: Infinity }}>
+                  <span className="text-sm font-medium">Learn more</span>
+                  <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                  </svg>
+                </motion.div>
+
+                {/* Corner Accent */}
+                <motion.div className="absolute top-8 right-8 w-2 h-2 rounded-full bg-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300" animate={hoveredIndex === index ? { scale: [1, 1.5, 1], opacity: [1, 0.5, 1] } : {}} transition={{ duration: 2, repeat: Infinity }} />
+              </div>
+            </motion.div>
+          ))}
+        </div>
       </div>
+
+      {/* Decorative Elements */}
+      <motion.div className="absolute top-20 right-20 w-32 h-32 border-2 border-primary/10 rounded-full" animate={{ rotate: 360 }} transition={{ duration: 30, repeat: Infinity, ease: "linear" }} />
+      <motion.div className="absolute bottom-20 left-20 w-24 h-24 border-2 border-accent/10 rounded-full" animate={{ rotate: -360 }} transition={{ duration: 25, repeat: Infinity, ease: "linear" }} />
     </section>
   );
-};
-
-export default WhyChoose;
+}
