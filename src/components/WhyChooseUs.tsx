@@ -2,51 +2,7 @@
 
 import { motion } from "motion/react";
 import { useEffect, useRef, useState } from "react";
-
-const features = [
-  {
-    icon: "⚡",
-    title: "Performance-Driven",
-    description: "Speed, efficiency, and optimization at every level",
-    color: "from-accent to-accent/60",
-    delay: 0.1,
-  },
-  {
-    icon: "🔒",
-    title: "Security First",
-    description: "Enterprise-grade security practices and compliance",
-    color: "from-primary to-primary-light",
-    delay: 0.2,
-  },
-  {
-    icon: "🤝",
-    title: "Collaborative Approach",
-    description: "Partners in your success, not just vendors",
-    color: "from-accent to-primary",
-    delay: 0.3,
-  },
-  {
-    icon: "📈",
-    title: "Proven Results",
-    description: "Measurable impact on business growth and ROI",
-    color: "from-primary-light to-accent",
-    delay: 0.4,
-  },
-  {
-    icon: "🔬",
-    title: "Innovation-Focused",
-    description: "Always at the forefront of technology",
-    color: "from-primary to-accent/80",
-    delay: 0.5,
-  },
-  {
-    icon: "🎯",
-    title: "Precision Execution",
-    description: "Precise attention to every detail",
-    color: "from-accent/80 to-primary-light",
-    delay: 0.6,
-  },
-];
+import { WHY_CHOOSE_US_FEATURES, WHY_CHOOSE_US_SECTION, type WhyChooseUsFeature } from "../../scripts/constants";
 
 export default function WhyChooseUs() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -81,22 +37,22 @@ export default function WhyChooseUs() {
         <div className="text-center mb-16 lg:mb-24">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={isVisible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6 }} className="inline-flex items-center gap-3 mb-6">
             <div className="h-px w-8 bg-linear-to-r from-transparent via-primary to-transparent" />
-            <span className="text-xs tracking-[0.3em] text-text-secondary font-medium uppercase">Why Choose Us</span>
+            <span className="text-xs tracking-[0.3em] text-text-secondary font-medium uppercase">{WHY_CHOOSE_US_SECTION.eyebrow}</span>
             <div className="h-px w-8 bg-linear-to-r from-transparent via-primary to-transparent" />
           </motion.div>
 
           <motion.h2 initial={{ opacity: 0, y: 30 }} animate={isVisible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.2 }} className="text-4xl md:text-5xl lg:text-6xl font-bold text-text mb-6">
-            Why Choose <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary-light to-accent">ZyncPoint</span>
+            {WHY_CHOOSE_US_SECTION.title.prefix} <span className="text-transparent bg-clip-text bg-linear-to-r from-primary via-primary-light to-accent">{WHY_CHOOSE_US_SECTION.title.highlight}</span>
           </motion.h2>
 
           <motion.p initial={{ opacity: 0, y: 20 }} animate={isVisible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.8, delay: 0.4 }} className="text-lg md:text-xl text-text-secondary max-w-3xl mx-auto">
-            Key advantages that set us apart
+            {WHY_CHOOSE_US_SECTION.description}
           </motion.p>
         </div>
 
         {/* Features Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
-          {features.map((feature, index) => (
+          {WHY_CHOOSE_US_FEATURES.map((feature: WhyChooseUsFeature, index: number) => (
             <motion.div key={feature.title} initial={{ opacity: 0, y: 40 }} animate={isVisible ? { opacity: 1, y: 0 } : {}} transition={{ duration: 0.6, delay: feature.delay }} onHoverStart={() => setHoveredIndex(index)} onHoverEnd={() => setHoveredIndex(null)} className="group relative">
               {/* Card Background with Border Effect */}
               <div className="absolute inset-0 bg-linear-to-br from-dark-secondary to-dark rounded-2xl" />

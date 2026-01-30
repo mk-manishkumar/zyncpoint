@@ -40,6 +40,14 @@ export interface TeamMember {
   };
 }
 
+export interface WhyChooseUsFeature {
+  icon: string;
+  title: string;
+  description: string;
+  color: string;
+  delay: number;
+}
+
 // ========================================
 // SERVICES PAGE CONTENT
 // ========================================
@@ -280,3 +288,63 @@ export const ABOUT_TEAM_SECTION = {
   },
   description: "A focused team driven by engineering excellence, product thinking, and long-term impact.",
 };
+
+// ========================================
+// WHY CHOOSE US SECTION (Home Page)
+// ========================================
+
+// Why Choose Us Section Header
+export const WHY_CHOOSE_US_SECTION = {
+  eyebrow: "Why Choose Us",
+  title: {
+    prefix: "Why Choose",
+    highlight: "ZyncPoint",
+  },
+  description: "Key advantages that set us apart",
+};
+
+// Why Choose Us Features
+export const WHY_CHOOSE_US_FEATURES: WhyChooseUsFeature[] = [
+  {
+    icon: "⚡",
+    title: "Performance-Driven",
+    description: "Speed, efficiency, and optimization at every level",
+    color: "from-accent to-accent/60",
+    delay: 0.1,
+  },
+  {
+    icon: "🔒",
+    title: "Security First",
+    description: "Enterprise-grade security practices and compliance",
+    color: "from-primary to-primary-light",
+    delay: 0.2,
+  },
+  {
+    icon: "🤝",
+    title: "Collaborative Approach",
+    description: "Partners in your success, not just vendors",
+    color: "from-accent to-primary",
+    delay: 0.3,
+  },
+  {
+    icon: "📈",
+    title: "Proven Results",
+    description: "Measurable impact on business growth and ROI",
+    color: "from-primary-light to-accent",
+    delay: 0.4,
+  },
+  {
+    icon: "🔬",
+    title: "Innovation-Focused",
+    description: "Always at the forefront of technology",
+    color: "from-primary to-accent/80",
+    delay: 0.5,
+  },
+  {
+    icon: "🎯",
+    title: "Precision Execution",
+    description: "Precise attention to every detail",
+    color: "from-accent/80 to-primary-light",
+    delay: 0.6,
+  },
+];
