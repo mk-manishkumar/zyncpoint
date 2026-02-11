@@ -3,13 +3,31 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
+import { useState, useMemo } from "react";
 import type { BlogMeta } from "./types";
+import BlogSearchBar from "./BlogSearchBar";
 
 type Props = {
   blogs: BlogMeta[];
 };
 
 const BlogsClient = ({ blogs }: Props) => {
+  const [searchQuery, setSearchQuery] = useState("");
+
+  // Filter blogs based on search query
+  const filteredBlogs = useMemo(() => {
+    if (!searchQuery.trim()) return blogs;
+
+    const query = searchQuery.toLowerCase().trim();
+
+    return blogs.filter((blog) => {
+      const titleMatch = blog.title.toLowerCase().includes(query);
+      const tagMatch = blog.tags?.some((tag) => tag.toLowerCase().includes(query));
+
+      return titleMatch || tagMatch;
+    });
+  }, [blogs, searchQuery]);
+
   return (
     <section className="px-6 py-20 relative overflow-hidden">
       <div className="max-w-350 mx-auto relative z-10">
@@ -20,13 +38,26 @@ const BlogsClient = ({ blogs }: Props) => {
           </motion.h1>
 
           <motion.p className="mt-4 text-text-secondary text-base md:text-lg" initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, ease: "easeOut", delay: 0.2 }}>
-            Insights, deep-dives, and engineering lessons from ZyncPoint.
+            Insights, deep-dives, and engineering lessons from Zyncpoint.
           </motion.p>
         </div>
 
+        {/* Search Bar */}
+        <BlogSearchBar searchQuery={searchQuery} onSearchChange={setSearchQuery} />
+
+        {/* No Results Message */}
+        {filteredBlogs.length === 0 && (
+          <motion.div className="text-center py-16" initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+            <p className="text-text-secondary text-lg">No blogs found matching &quot;{searchQuery}&quot;</p>
+            <button onClick={() => setSearchQuery("")} className="mt-4 text-primary hover:underline transition-all duration-200">
+              Clear search
+            </button>
+          </motion.div>
+        )}
+
         {/* Grid */}
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {blogs.map((blog, index) => {
+          {filteredBlogs.map((blog, index) => {
             const primaryTag = blog.tags?.[0];
 
             return (
