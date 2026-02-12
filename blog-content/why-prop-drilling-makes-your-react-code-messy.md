@@ -1,8 +1,8 @@
 ---
 title: "Why Prop Drilling Makes Your React Code Messy"
 slug: "why-prop-drilling-makes-your-react-code-messy"
-excerpt: "You start with a simple React app, everything is clean, and then suddenly you're passing props through five components to get some data where it needs to go. It's like being forced to pass a message through people who don't need to hear it. What's Pr..."
-tags: ["react"]
+excerpt: "Prop drilling is a common problem in React applications where you need to pass data through multiple layers of components to reach a deeply nested child component. This can make your code messy and hard to maintain. In this blog post, we'll explore w..."
+tag: "React"
 date: "2025-07-07T17:33:35.000Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1767785208955/a5cf9b47-d378-452a-ac84-f79702525359.webp"
 ---
@@ -13,7 +13,7 @@ You start with a simple React app, everything is clean, and then suddenly you're
 
 Basically, it's when you pass props through multiple components that don't even need them, just to get the data to a deeply nested child component. Think of it like this:
 
-```Javascript
+```
 // Parent has the data
 function App() {
   const user = { name: "John", email: "john@example.com" };
@@ -50,7 +50,7 @@ See the problem? The header and navigation are just middlemen doing nothing usef
 ## Better Solutions
 ### Context API for shared state:
 
-```Javascript
+```
 const UserContext = createContext();
 
 function App() {

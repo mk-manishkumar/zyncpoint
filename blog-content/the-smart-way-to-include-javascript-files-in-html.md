@@ -2,7 +2,7 @@
 title: "The Smart Way to Include JavaScript Files in HTML"
 slug: "the-smart-way-to-include-javascript-files-in-html"
 excerpt: "Look, if you've been building websites for a while, you've probably thrown a <script> tag into your HTML without thinking twice about it. But here's the thing, there's actually a right way and a wrong way to do this. And more importantly, there are f..."
-tags: ["javascript"]
+tag: "JavaScript"
 date: "2026-02-11T17:42:41.940Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770831505680/fc78fc27-ad8b-460d-83e2-7a85e74cf796.png"
 ---

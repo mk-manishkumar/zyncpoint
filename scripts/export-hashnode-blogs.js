@@ -24,6 +24,7 @@ query GetPublicationPosts($host: String!, $first: Int!, $after: String) {
           slug
           brief
           publishedAt
+          updatedAt
           content {
             markdown
           }
@@ -70,8 +71,6 @@ async function fetchBlogs() {
 
     hasNextPage = postsData.pageInfo.hasNextPage;
     cursor = postsData.pageInfo.endCursor;
-
-    if (process.env.NODE_ENV === "development") console.log(`Fetched ${posts.length} posts (Total: ${allPosts.length})`);
   }
 
   return allPosts;
@@ -88,11 +87,14 @@ function escapeForYAML(value = "") {
 }
 
 function toMarkdownFile(post) {
+  // Use updatedAt if available, otherwise fall back to publishedAt
+  const date = post.updatedAt || post.publishedAt;
+
   return `---
 title: "${escapeForYAML(post.title)}"
 slug: "${post.slug}"
 excerpt: "${escapeForYAML(post.brief)}"
-date: "${post.publishedAt}"
+date: "${date}"
 coverImage: "${post.coverImage?.url || ""}"
 ---
 
@@ -107,12 +109,40 @@ function getContentHash(content) {
 async function exportBlogs() {
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
+  // Create backup if updating existing files
+  if (UPDATE_EXISTING) {
+    const backupDir = path.join(OUTPUT_DIR, ".backup");
+    if (!fs.existsSync(backupDir)) fs.mkdirSync(backupDir, { recursive: true });
+
+    const existingFiles = fs.readdirSync(OUTPUT_DIR).filter((f) => f.endsWith(".md"));
+    if (existingFiles.length > 0) {
+      const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
+      const backupFolder = path.join(backupDir, timestamp);
+      fs.mkdirSync(backupFolder, { recursive: true });
+
+      existingFiles.forEach((file) => {
+        fs.copyFileSync(path.join(OUTPUT_DIR, file), path.join(backupFolder, file));
+      });
+      console.log(`\n💾 Backup created: ${backupFolder}`);
+    }
+  }
+
   const posts = await fetchBlogs();
+
+  console.log(`\n🔍 Fetch Info:`);
+  console.log(`   Total posts from API: ${posts.length}`);
+  if (posts.length > 0) {
+    // Sort by date to show latest
+    const sortedByDate = [...posts].sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
+    console.log(`   Latest post: "${sortedByDate[0].title}"`);
+    console.log(`   Published: ${sortedByDate[0].publishedAt}`);
+  }
+
   let createdCount = 0;
   let updatedCount = 0;
   let skippedCount = 0;
 
-  // Track current slugs for deletion detection
+  // Track current slugs
   const currentSlugs = new Set(posts.map((p) => p.slug));
   const existingFiles = fs
     .readdirSync(OUTPUT_DIR)
@@ -127,19 +157,18 @@ async function exportBlogs() {
 
     if (exists) {
       if (UPDATE_EXISTING) {
-        // Check if content actually changed
+        // ALWAYS overwrite to ensure fresh content
         const existingContent = fs.readFileSync(filePath, "utf8");
         const existingHash = getContentHash(existingContent);
         const newHash = getContentHash(newContent);
 
+        fs.writeFileSync(filePath, newContent, "utf8");
+
         if (existingHash === newHash) {
           skippedCount++;
         } else {
-          fs.writeFileSync(filePath, newContent, "utf8");
           updatedCount++;
-          if (process.env.NODE_ENV === "development") {
-            console.log(`✏️  Updated: ${post.slug}.md`);
-          }
+          console.log(`✏️  Updated: ${post.slug}.md`);
         }
       } else {
         skippedCount++;
@@ -148,25 +177,16 @@ async function exportBlogs() {
       // New file
       fs.writeFileSync(filePath, newContent, "utf8");
       createdCount++;
-      if (process.env.NODE_ENV === "development") {
-        console.log(`✅ Created: ${post.slug}.md`);
-      }
+      console.log(`✅ Created: ${post.slug}.md`);
     }
   });
 
-  // Detect deleted posts (optional - only if UPDATE_EXISTING is true)
-  let deletedCount = 0;
-  if (UPDATE_EXISTING) {
-    existingFiles.forEach((slug) => {
-      if (currentSlugs.has(slug)) {
-        return; // Post still exists, skip
-      }
-      const filePath = path.join(OUTPUT_DIR, `${slug}.md`);
-      fs.unlinkSync(filePath);
-      deletedCount++;
-      if (process.env.NODE_ENV === "development") {
-        console.log(`🗑️  Deleted: ${slug}.md`);
-      }
+  // Check for orphaned files (don't auto-delete)
+  const orphanedFiles = existingFiles.filter((slug) => !currentSlugs.has(slug));
+  if (orphanedFiles.length > 0 && UPDATE_EXISTING) {
+    console.log(`\n⚠️  Warning: ${orphanedFiles.length} local file(s) not found in API:`);
+    orphanedFiles.forEach((slug) => {
+      console.log(`   - ${slug}.md (kept locally, not deleted)`);
     });
   }
 
@@ -176,10 +196,15 @@ async function exportBlogs() {
   console.log(`   ✅ Created: ${createdCount}`);
   if (UPDATE_EXISTING) {
     console.log(`   ✏️  Updated: ${updatedCount}`);
-    console.log(`   🗑️  Deleted: ${deletedCount}`);
+    console.log(`   ⏭️  Refreshed (unchanged): ${skippedCount}`);
+  } else {
+    console.log(`   ⏭️  Skipped (existing): ${skippedCount}`);
   }
-  console.log(`   ⏭️  Skipped (unchanged): ${skippedCount}`);
-  console.log(`\n💡 Tip: Set UPDATE_BLOGS=true to update existing posts\n`);
+
+  if (!UPDATE_EXISTING) {
+    console.log(`\n💡 Tip: Set UPDATE_BLOGS=true to update existing posts`);
+  }
+  console.log();
 }
 
 try {

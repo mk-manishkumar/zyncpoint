@@ -2,8 +2,8 @@
 title: "Buffer vs Streams: A Battle for the Ages"
 slug: "buffer-vs-streams-a-battle-for-the-ages"
 excerpt: "Welcome, dear readers, to the ultimate showdown between two of the most important concepts in computer programming: buffers and streams. In one corner, we have the humble buffer, a fixed-sized block of memory used to store data. In the other corner, ..."
-date: "2023-03-19T16:41:45.769Z"
-tags: ["C"]
+tag: "C"
+date: "2023-04-10T12:00:18.818Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1679243740909/a7dad55b-06bd-4c6f-b6f1-ddc4e90a3fcd.jpeg"
 ---
 

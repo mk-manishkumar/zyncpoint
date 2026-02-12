@@ -8,8 +8,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "exportBlogs": "node scripts/export-hashnode-blogs.js",
-    "exportBlogs:update": "UPDATE_BLOGS=true node scripts/export-hashnode-blogs.js"
+    "blogs": "node scripts/export-hashnode-blogs.js",
+    "blogs:update": "cross-env UPDATE_BLOGS=true node scripts/export-hashnode-blogs.js"
   },
   "dependencies": {
     "lucide-react": "^0.562.0",
@@ -31,6 +31,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "babel-plugin-react-compiler": "1.0.0",
+    "cross-env": "^10.1.0",
     "eslint": "^9",
     "eslint-config-next": "16.1.1",
     "tailwindcss": "^4",

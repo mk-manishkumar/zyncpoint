@@ -2,8 +2,8 @@
 title: "Segmentation Faults in C"
 slug: "segmentation-faults-in-c"
 excerpt: "Are you tired of hearing about segmentation faults and feeling like your C programs are constantly crashing? Don't worry, you're not alone. Segfaults can be a headache for even the most experienced programmers, but understanding their causes and how ..."
-tags: ["C"]
-date: "2023-03-18T17:37:02.018Z"
+tag: "C"
+date: "2026-02-12T04:51:40.190Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1679160769727/9ebd9a0f-a755-4312-9c9e-0e81a486c368.jpeg"
 ---
 
@@ -42,7 +42,7 @@ int main(){
 }
 ```
 
-Arrays indices range from zero to nine, so accessing the tenth index of array a will also result in a segmentation fault as it is considered a memory access violation.
+Array indices range from zero to nine, so accessing the tenth index of array a will also result in a segmentation fault, as it is considered a memory access violation.
 
 1. **Using a variable's value as an address**
     
@@ -116,16 +116,16 @@ int foo() {
 }
 ```
 
-A stack overflow occurs when a program runs out of the allocated space in the call stack. This is often caused by excessive recursion or deeply nested function calls. In simpler terms, it's like a stack of plates that keeps piling up until it reaches the ceiling and spills over. When the stack pointer exceeds the allocated stack space, it can cause a stack overflow resulting in a segmentation fault. For example, if the function "foo" continuously calls itself without an exit condition, it keeps allocating more space on the stack until it overflows and crashes the program, ultimately resulting in a segmentation fault.
+A stack overflow occurs when a program runs out of the allocated space in the call stack. This is often caused by excessive recursion or deeply nested function calls. In simpler terms, it's like a stack of plates that keeps piling up until it reaches the ceiling and spills over. When the stack pointer exceeds the allocated stack space, it can cause a stack overflow, resulting in a segmentation fault. For example, if the function "foo" continuously calls itself without an exit condition, it keeps allocating more space on the stack until it overflows and crashes the program, ultimately resulting in a segmentation fault.
 
 ## **How to Prevent Segmentation Faults**
 
-One way to prevent segmentation faults is to follow best practices for memory management, such as initializing all pointers, checking for null pointers before dereferencing them, and using bounds-checking functions when working with arrays. It's like putting on your seatbelt before going for a drive - it may take a little extra effort, but it can save you from a lot of pain later on.
+One way to prevent segmentation faults is to follow best practices for memory management, such as initializing all pointers, checking for null pointers before dereferencing them, and using bounds-checking functions when working with arrays. It's like putting on your seatbelt before going for a drive; it may take a little extra effort, but it can save you from a lot of pain later on.
 
 ## **Dealing with Segmentation Faults**
 
-But let's be real, sometimes segmentation faults just happen. It's like walking on a tightrope - even if you've done everything right, one misstep can lead to a fall. When that happens, the operating system generates a core dump file, which can be used to identify the cause of the error. It's like leaving a trail of breadcrumbs to help you find your way back to where you went wrong.
+But let's be real, sometimes segmentation faults just happen. It's like walking on a tightrope; even if you've done everything right, one misstep can lead to a fall. When that happens, the operating system generates a core dump file, which can be used to identify the cause of the error. It's like leaving a trail of breadcrumbs to help you find your way back to where you went wrong.
 
 ## **Conclusion**
 
-In conclusion, segmentation faults may be a pain, but they're not the end of the world. By understanding their causes and following best practices for memory management, you can reduce the likelihood of encountering them. And if all else fails, there's always Valgrind (It is a powerful open-source software tool that is used for debugging and profiling applications on Linux and other Unix-like operating systems.) to help you identify and debug your errors. So keep calm, code on, and may your programs run smoothly (with no segfaults in sight!).
+In conclusion, segmentation faults may be a pain, but they're not the end of the world. By understanding their causes and following best practices for memory management, you can reduce the likelihood of encountering them. And if all else fails, there's always Valgrind (it is a powerful open-source software tool that is used for debugging and profiling applications on Linux and other Unix-like operating systems) to help you identify and debug your errors. So keep calm and code on, and may your programs run smoothly (with no segfaults in sight!).
