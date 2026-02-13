@@ -2,7 +2,7 @@
 title: "How Does the Internet Actually Work?"
 slug: "how-does-the-internet-actually-work"
 excerpt: "Nowadays, a lot of beginners straightaway start learning the internet languages HTML, CSSS and JavaScript without understanding the fundamentals of how the internet works. But, before deep diving into it, let's understand what exactly is the internet..."
-tag: "Web"
+tags: "how internet works, submarinecable.com, internet, submarine, IP"
 date: "2026-02-12T03:18:02.746Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770866066146/c838b0dc-cdeb-4ed9-af81-2833b6056268.png"
 ---

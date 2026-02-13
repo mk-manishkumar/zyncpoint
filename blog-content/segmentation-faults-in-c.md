@@ -2,7 +2,7 @@
 title: "Segmentation Faults in C"
 slug: "segmentation-faults-in-c"
 excerpt: "Are you tired of hearing about segmentation faults and feeling like your C programs are constantly crashing? Don't worry, you're not alone. Segfaults can be a headache for even the most experienced programmers, but understanding their causes and how ..."
-tag: "C"
+tags: "C, segmentation faults, preventing segmentation faults in C, pointers, pointers in c, Buffer Overfow, Stack Overflow"
 date: "2026-02-12T04:51:40.190Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1679160769727/9ebd9a0f-a755-4312-9c9e-0e81a486c368.jpeg"
 ---

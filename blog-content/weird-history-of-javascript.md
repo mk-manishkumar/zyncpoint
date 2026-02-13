@@ -2,7 +2,7 @@
 title: "Weird History of JavaScript"
 slug: "weird-history-of-javascript"
 excerpt: "In 1995, Netscape Navigator was the most popular web browser. They thought of creating a programming language that could add interactivity to the website. At that time, Brendan Eich was working for Netscape Navigator. He made JavaScript in only 10 da..."
-tag: "JavaScript"
+tags: "JavaScript, history of javascript, ecmascript, ecmascript6, tc39"
 date: "2026-02-12T04:24:17.723Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1663437515075/qegW9zqQ4.png"
 ---

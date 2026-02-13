@@ -1,10 +1,10 @@
 ---
-title: "Creating a Simple Text Editor using C Programming Language"
+title: "Creating a Simple Text Editor Using C Programming Language"
 slug: "creating-a-simple-text-editor-using-c-programming-language"
-excerpt: "In this blog, we will be creating a simple text editor using C programming language. This text editor will allow users to create, open, edit, and save text files. We will be using basic file handling concepts in C to achieve this.  Prerequisites  Bas..."
-tag: "C"
-date: "2026-02-12T04:50:30.859Z"
-coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770871795913/2e3e1c1e-d9c9-4c9d-9f0e-a4e5d5e1b7a0.png"
+excerpt: "As someone interested in programming and exploring different programming languages, I decided to create a simple text editor using the C programming language. This project allowed me to gain a deeper understanding of the language while also allowing ..."
+tags: "Text Editors, C programming language, development environments, C, File handling"
+date: "2026-02-12T04:48:28.575Z"
+coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1678211523628/4aaad7cd-4444-4bf1-9c8a-b42e2c00b37d.png"
 ---
 
 As someone interested in programming and exploring different programming languages, I decided to create a simple text editor using the C programming language. This project allowed me to gain a deeper understanding of the language while also allowing me to create a useful tool.

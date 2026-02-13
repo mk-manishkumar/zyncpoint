@@ -1,10 +1,10 @@
 ---
 title: "How CSS Positioning Works"
 slug: "how-css-positioning-works"
-excerpt: "Positioning in CSS is a very important concept. It is used to position elements on a web page. There are 5 types of positioning in CSS:  Static Relative Fixed Absolute Sticky  Static Positioning  Static positioning is the default positioning of an el..."
-tag: "CSS"
-date: "2026-02-12T04:48:24.893Z"
-coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770871672064/a1a1a1a1-a1a1-a1a1-a1a1-a1a1a1a1a1a1.png"
+excerpt: "Before learning about how CSS positioning works, let's understand why positioning is important. As you know, by default, HTML elements appear on the webpage in the same sequence as they are in the HTML code. HTML doesn't have that high level of funct..."
+tags: "CSS, css position , css position properties, position absolute"
+date: "2026-02-12T04:13:09.937Z"
+coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770869451020/ebdc57c3-982e-4fda-8524-bf686513f350.png"
 ---
 
 Before learning about how CSS positioning works, let's understand why positioning is important. As you know, by default, HTML elements appear on the webpage in the same sequence as they are in the HTML code. HTML doesn't have that high level of functionality with which it can set the position of an element with precision.

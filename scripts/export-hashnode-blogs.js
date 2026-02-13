@@ -25,6 +25,9 @@ query GetPublicationPosts($host: String!, $first: Int!, $after: String) {
           brief
           publishedAt
           updatedAt
+          tags {
+            name
+          }
           content {
             markdown
           }
@@ -90,10 +93,14 @@ function toMarkdownFile(post) {
   // Use updatedAt if available, otherwise fall back to publishedAt
   const date = post.updatedAt || post.publishedAt;
 
+  // Extract tag names and join them with commas
+  const tags = post.tags?.map((tag) => tag.name).join(", ") || "";
+
   return `---
 title: "${escapeForYAML(post.title)}"
 slug: "${post.slug}"
 excerpt: "${escapeForYAML(post.brief)}"
+tags: "${tags}"
 date: "${date}"
 coverImage: "${post.coverImage?.url || ""}"
 ---
@@ -109,34 +116,10 @@ function getContentHash(content) {
 async function exportBlogs() {
   if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
-  // Create backup if updating existing files
-  if (UPDATE_EXISTING) {
-    const backupDir = path.join(OUTPUT_DIR, ".backup");
-    if (!fs.existsSync(backupDir)) fs.mkdirSync(backupDir, { recursive: true });
-
-    const existingFiles = fs.readdirSync(OUTPUT_DIR).filter((f) => f.endsWith(".md"));
-    if (existingFiles.length > 0) {
-      const timestamp = new Date().toISOString().replace(/[:.]/g, "-");
-      const backupFolder = path.join(backupDir, timestamp);
-      fs.mkdirSync(backupFolder, { recursive: true });
-
-      existingFiles.forEach((file) => {
-        fs.copyFileSync(path.join(OUTPUT_DIR, file), path.join(backupFolder, file));
-      });
-      console.log(`\n💾 Backup created: ${backupFolder}`);
-    }
-  }
-
   const posts = await fetchBlogs();
 
   console.log(`\n🔍 Fetch Info:`);
   console.log(`   Total posts from API: ${posts.length}`);
-  if (posts.length > 0) {
-    // Sort by date to show latest
-    const sortedByDate = [...posts].sort((a, b) => new Date(b.publishedAt) - new Date(a.publishedAt));
-    console.log(`   Latest post: "${sortedByDate[0].title}"`);
-    console.log(`   Published: ${sortedByDate[0].publishedAt}`);
-  }
 
   let createdCount = 0;
   let updatedCount = 0;

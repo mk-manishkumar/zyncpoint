@@ -1,10 +1,10 @@
 ---
 title: "Git and GitHub Masterclass"
 slug: "git-and-github-masterclass"
-excerpt: "In this blog, we will learn about Git and GitHub. We will learn about the basics of Git and GitHub, and how to use them to manage our code.  What is Git?  Git is a version control system that allows us to track changes in our code. It is a distribut..."
-tag: "Git"
-date: "2026-02-12T04:49:14.823Z"
-coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770871720098/c1c6e2e8-a8e9-4e9e-9e9e-9e9e9e9e9e9e.png"
+excerpt: "What is Git\nGit is a tool that allows you to version control.\nSuppose we create a file in which JavaScript code is written on 20th July 2022. Then on 21st July, we did some minor changes to it. And then again on 22nd July, 23rd July and 24th July we ..."
+tags: "Git, GitHub, Gitcommands, git branch, git basics for beginners"
+date: "2026-02-12T04:02:02.495Z"
+coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770868856115/c6916fe2-f36e-4ece-b767-1a712915e140.png"
 ---
 
 # What is Git

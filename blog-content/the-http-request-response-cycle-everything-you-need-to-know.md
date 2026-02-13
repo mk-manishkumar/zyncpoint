@@ -1,8 +1,8 @@
 ---
 title: "The HTTP Request-Response Cycle: Everything You Need to Know"
 slug: "the-http-request-response-cycle-everything-you-need-to-know"
-excerpt: "The HTTP request-response cycle is the foundation of how the web works. Every time you visit a website, your browser sends an HTTP request to a server, which then sends back an HTTP response. In this blog post, we'll take a closer look at how this c..."
-tag: "HTTP"
+excerpt: "You know what's funny? Most people use websites every single day, but if you ask them how a website actually works, they'll give you this blank stare. I was the same way before I started learning web development. So let me break this down for you in ..."
+tags: "http, http requests, HTTP Request and Response, website, HowWebsitesWork, HTTP protocol , client-server, Client Server Architecture"
 date: "2026-02-10T18:39:42.306Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770748555677/56a81b01-e64b-41f3-ac4b-e0b1567af161.png"
 ---

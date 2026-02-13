@@ -2,7 +2,7 @@
 title: "The Connection Between 32-bit and 64-bit Processors and Bus Width"
 slug: "the-connection-between-32-bit-and-64-bit-processors-and-bus-width"
 excerpt: "Have you ever heard someone say they have a 32-bit or 64-bit computer and wondered what that meant? Or maybe you've heard someone talking about bus width and thought, \"What does that have to do with anything?\" Fear not, my tech-challenged friend, I a..."
-tag: "Hardware"
+tags: "Bus width, 32-bit processor, 64-bit processor, processor, processors"
 date: "2026-02-12T04:45:49.448Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1677998773076/b46e02c6-9821-49d1-aa1b-867b467cf586.jpeg"
 ---

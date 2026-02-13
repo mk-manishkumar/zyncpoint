@@ -1,8 +1,8 @@
 ---
 title: "How to Fix Next.js MongoDB Connection Errors That Crash Your App"
 slug: "how-to-fix-nextjs-mongodb-connection-errors-that-crash-your-app"
-excerpt: "If you're building a Next.js application with MongoDB, you might have run into a frustrating issue where your app crashes with a \"MongoTopologyClosedError\" or similar connection errors. This happens because Next.js's hot-reloading during developmen..."
-tag: "NextJS"
+excerpt: "Alright, so you built a Next.js app with MongoDB. It works on your laptop. You deploy it. Feels great, right?\nThen a week later... BOOM. App's down. Users can't log in. You're panicking.\nYou check MongoDB and see: \"Too many connections\"\nWhat the hell..."
+tags: "nextjs-database-best-practices, nextjs-production-errors, serverless-database-optimization, Next.js, MongoDB, production, hot-reloading, database-connection-pooling"
 date: "2026-01-13T16:33:36.530Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1768321713741/c42052dd-915c-45f2-889d-35e274c567a8.jpeg"
 ---

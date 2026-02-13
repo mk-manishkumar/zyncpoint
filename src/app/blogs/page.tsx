@@ -22,9 +22,9 @@ const getBlogMeta = (): BlogMeta[] => {
 
       const date = /date:\s*"(.*)"/.exec(fm)?.[1] ?? "";
 
-      const tagsMatch = /tags:\s*\[(.*)\]/.exec(fm)?.[1];
+      const tagsMatch = /tags:\s*"(.*)"/.exec(fm)?.[1];
 
-      const tags = tagsMatch ? tagsMatch.split(",").map((t) => t.trim().replace(/^"(.*)"$/, "$1")) : [];
+      const tags = tagsMatch ? tagsMatch.split(",").map((t) => t.trim()) : [];
 
       return { slug, title, coverImage, date, tags };
     });
