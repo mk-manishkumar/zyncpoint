@@ -8,8 +8,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "blogs": "node scripts/export-hashnode-blogs.js",
-    "blogs:update": "cross-env UPDATE_BLOGS=true node scripts/export-hashnode-blogs.js"
+    "blogs": "node scripts/export-hashnode-blogs.js"
   },
   "dependencies": {
     "lucide-react": "^0.562.0",

@@ -2,9 +2,23 @@
 title: "Why HTML is not a Programming Language?"
 slug: "why-html-is-not-a-programming-language"
 excerpt: "HTML (Hypertext Markup Language) is a markup language widely used in web development to structure web pages, define their content and layout, and establish their relationships with other web resources. Although HTML has some scripting capabilities, i..."
-tags: "HTML vs Programming Languages, Understanding Turing Completeness, Web Development and HTML, Turing Completeness and Computational Power, Limits of HTML Scripting Capabilities"
-date: "2026-02-12T04:42:01.893Z"
+tags: "HTML, HTML vs Programming Languages, turing incomplete, Turing Completeness and Computational Power, turing test"
+tagSlugs: "html, html-vs-programming-languages, turing-incomplete, turing-completeness-and-computational-power, turing-test"
+date: "2026-02-12T18:05:48.412Z"
+publishedAt: "2023-03-03T07:38:30.473Z"
+updatedAt: "2026-02-12T18:05:48.412Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1677828637161/f93f2fe8-988c-4a2b-9644-0331816689d0.jpeg"
+url: "https://manishmk.hashnode.dev/why-html-is-not-a-programming-language"
+author: "Manish Kumar"
+authorUsername: "ManishMK"
+authorProfilePicture: "https://cdn.hashnode.com/res/hashnode/image/upload/v1754728990444/f59c3826-4a73-4075-9e55-7585e2283f0f.jpeg"
+readTimeInMinutes: 2
+reactionCount: 0
+responseCount: 0
+views: 26
+seoTitle: "Why HTML is Not a Programming Language: Turing Completeness"
+seoDescription: "HTML is a widely used markup language in web development, but it is not considered a programming language. Do you know, Why?"
+hashnodeId: "6401a3f604fcf3ddbc69d01f"
 ---
 
 HTML (Hypertext Markup Language) is a markup language widely used in web development to structure web pages, define their content and layout, and establish their relationships with other web resources. Although HTML has some scripting capabilities, it is not considered a programming language.

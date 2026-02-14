@@ -1,10 +1,24 @@
 ---
-title: "Creating a Simple Text Editor Using C Programming Language"
+title: "Creating a Simple Text Editor Using the C Programming Language"
 slug: "creating-a-simple-text-editor-using-c-programming-language"
 excerpt: "As someone interested in programming and exploring different programming languages, I decided to create a simple text editor using the C programming language. This project allowed me to gain a deeper understanding of the language while also allowing ..."
-tags: "Text Editors, C programming language, development environments, C, File handling"
-date: "2026-02-12T04:48:28.575Z"
-coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1678211523628/4aaad7cd-4444-4bf1-9c8a-b42e2c00b37d.png"
+tags: "C, Text Editors, File handling, eof-handling, cli"
+tagSlugs: "c, text-editors, file-handling, eof-handling, cli"
+date: "2026-02-13T04:11:14.675Z"
+publishedAt: "2023-03-07T17:56:43.670Z"
+updatedAt: "2026-02-13T04:11:14.675Z"
+coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770955850578/1132feaa-4f4f-44c5-9780-bca22b037daf.png"
+url: "https://manishmk.hashnode.dev/creating-a-simple-text-editor-using-c-programming-language"
+author: "Manish Kumar"
+authorUsername: "ManishMK"
+authorProfilePicture: "https://cdn.hashnode.com/res/hashnode/image/upload/v1754728990444/f59c3826-4a73-4075-9e55-7585e2283f0f.jpeg"
+readTimeInMinutes: 4
+reactionCount: 0
+responseCount: 0
+views: 107
+seoTitle: "How to Build a Simple Text Editor Using C Programming Language"
+seoDescription: "In this step-by-step guide, learn how to build a simple text editor using the C programming language."
+hashnodeId: "64077adb7b4e9e7a3a7a961e"
 ---
 
 As someone interested in programming and exploring different programming languages, I decided to create a simple text editor using the C programming language. This project allowed me to gain a deeper understanding of the language while also allowing me to create a useful tool.

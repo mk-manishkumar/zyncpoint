@@ -3,8 +3,22 @@ title: "The HTTP Request-Response Cycle: Everything You Need to Know"
 slug: "the-http-request-response-cycle-everything-you-need-to-know"
 excerpt: "You know what's funny? Most people use websites every single day, but if you ask them how a website actually works, they'll give you this blank stare. I was the same way before I started learning web development. So let me break this down for you in ..."
 tags: "http, http requests, HTTP Request and Response, website, HowWebsitesWork, HTTP protocol , client-server, Client Server Architecture"
-date: "2026-02-10T18:39:42.306Z"
-coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770748555677/56a81b01-e64b-41f3-ac4b-e0b1567af161.png"
+tagSlugs: "http, http-requests, http-request-and-response, website, howwebsiteswork, http-protocol, client-server, client-server-architecture"
+date: "2026-02-13T07:03:20.986Z"
+publishedAt: "2026-02-10T18:39:42.306Z"
+updatedAt: "2026-02-13T07:03:20.986Z"
+coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770966078550/e9061b6d-71af-46be-9f97-701532a0eafa.png"
+url: "https://manishmk.hashnode.dev/the-http-request-response-cycle-everything-you-need-to-know"
+author: "Manish Kumar"
+authorUsername: "ManishMK"
+authorProfilePicture: "https://cdn.hashnode.com/res/hashnode/image/upload/v1754728990444/f59c3826-4a73-4075-9e55-7585e2283f0f.jpeg"
+readTimeInMinutes: 6
+reactionCount: 0
+responseCount: 0
+views: 11
+seoTitle: "The HTTP Request-Response Cycle: Everything You Need to Know About Ho"
+seoDescription: "Learn how websites actually work from browser to server and back. Understand HTTP requests, responses, DevTools, and build your first website. A complete be"
+hashnodeId: "698b7b6eaa48b8b9d64dab5e"
 ---
 
 You know what's funny? Most people use websites every single day, but if you ask them how a website actually works, they'll give you this blank stare. I was the same way before I started learning web development. So let me break this down for you in the simplest way possible.

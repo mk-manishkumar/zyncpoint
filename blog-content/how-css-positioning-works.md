@@ -3,8 +3,22 @@ title: "How CSS Positioning Works"
 slug: "how-css-positioning-works"
 excerpt: "Before learning about how CSS positioning works, let's understand why positioning is important. As you know, by default, HTML elements appear on the webpage in the same sequence as they are in the HTML code. HTML doesn't have that high level of funct..."
 tags: "CSS, css position , css position properties, position absolute"
+tagSlugs: "css, css-position, css-position-properties, position-absolute"
 date: "2026-02-12T04:13:09.937Z"
+publishedAt: "2022-07-23T14:48:34.571Z"
+updatedAt: "2026-02-12T04:13:09.937Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770869451020/ebdc57c3-982e-4fda-8524-bf686513f350.png"
+url: "https://manishmk.hashnode.dev/how-css-positioning-works"
+author: "Manish Kumar"
+authorUsername: "ManishMK"
+authorProfilePicture: "https://cdn.hashnode.com/res/hashnode/image/upload/v1754728990444/f59c3826-4a73-4075-9e55-7585e2283f0f.jpeg"
+readTimeInMinutes: 5
+reactionCount: 0
+responseCount: 0
+views: 14
+seoTitle: "CSS Position"
+seoDescription: "CSS Position, Position Static, Position Absolute, Position Fixed, Position Relative, Position Sticky"
+hashnodeId: "62dc0a42b12ca5754f6a4102"
 ---
 
 Before learning about how CSS positioning works, let's understand why positioning is important. As you know, by default, HTML elements appear on the webpage in the same sequence as they are in the HTML code. HTML doesn't have that high level of functionality with which it can set the position of an element with precision.

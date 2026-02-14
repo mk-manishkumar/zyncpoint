@@ -1,47 +1,60 @@
 ---
-title: "🧠 How to Build a Carousel in ReactJS with Tailwind"
+title: "How to Build a Carousel in ReactJS with Tailwind"
 slug: "how-to-build-a-carousel-in-reactjs-with-tailwind"
 excerpt: "Everyone adds carousels to their websites. Most of the time, people simply install a library like Slick Carousel, add a few props, and move on. However, that approach often adds unnecessary code. In this guide, we’ll learn how to build a clean, light..."
-tags: ""
-date: "2025-07-04T08:23:41.000Z"
-coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1767785212774/9386df5d-deb5-4766-bdba-de56c11a4023.webp"
+tags: "React, Tailwind CSS"
+tagSlugs: "reactjs, tailwind-css"
+date: "2026-02-12T17:52:48.259Z"
+publishedAt: "2025-07-04T08:23:41.000Z"
+updatedAt: "2026-02-12T17:52:48.259Z"
+coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770918742857/4eb96119-c882-4dae-a22c-685e83267106.png"
+url: "https://manishmk.hashnode.dev/how-to-build-a-carousel-in-reactjs-with-tailwind"
+author: "Manish Kumar"
+authorUsername: "ManishMK"
+authorProfilePicture: "https://cdn.hashnode.com/res/hashnode/image/upload/v1754728990444/f59c3826-4a73-4075-9e55-7585e2283f0f.jpeg"
+readTimeInMinutes: 3
+reactionCount: 0
+responseCount: 0
+views: 0
+hashnodeId: "695e42fda1f7d6f77775dfe9"
 ---
 
 Everyone adds carousels to their websites. Most of the time, people simply install a library like Slick Carousel, add a few props, and move on. However, that approach often adds unnecessary code. In this guide, we’ll learn how to build a clean, lightweight carousel from scratch using React and Tailwind CSS.
 
 ## 🚀 Step 1: Create a React + TypeScript project with Vite
 
-
-```
+```c
 npm create vite@latest my-carousel --template react-ts
 cd my-carousel
 ```
+
 > If you want plain JavaScript, replace react-ts with react.
 
-------------------
+---
 
 ## 🎨 Step 2: Install Tailwind CSS
 
 To install Tailwind CSS, follow the instructions at the [link](https://tailwindcss.com/docs/installation/using-vite)
 
-------------------
+---
 
 ## 🖼 Step 3: Load Your Images
 
 Dump your images into `public/carouselImages/`. Now set them up:
 
-```
+```c
 const carouselImages = [
   "/carouselImages/carousel-1.jpg",
   "/carouselImages/carousel-2.jpg",
   "/carouselImages/carousel-3.jpg",
 ];
 ```
----------------------
+
+---
 
 ## ⚛️ Step 4: The React Component
 
-```
+```c
 import { useState, useEffect } from "react";
 
 const carouselImages = [
@@ -108,7 +121,7 @@ export const Carousel = () => {
 };
 ```
 
---------------------
+---
 
 ## 🧠 How Does It Work?
 
@@ -116,7 +129,7 @@ Let’s deconstruct this:
 
 ### 🔁 prevSlide
 
-```
+```c
 setCurrent((prev) => (prev === 0 ? carouselImages.length - 1 : prev - 1));
 ```
 
@@ -124,7 +137,7 @@ If you’re on the first slide, wrap to the last. Else, go to the previous. Simp
 
 ### 🔂 nextSlide
 
-```
+```c
 setCurrent((prev) => (prev === carouselImages.length - 1 ? 0 : prev + 1));
 ```
 
@@ -132,19 +145,19 @@ If you’re on the last slide, wrap to the first. Otherwise, move forward. This 
 
 ### 🎯 goToSlide
 
-```
+```c
 (index: number) => setCurrent(index);
 ```
 
 This allows direct jumping to a slide. Used in the dot indicators at the bottom.
 
----------------------
+---
 
 ## 🖼 How Slides Are Actually Rendered
 
 This is where the clean animation happens:
 
-```
+```c
 <div
   key={index}
   className={`absolute inset-0 transition-opacity duration-700 ease-in-out ${
@@ -155,16 +168,18 @@ This is where the clean animation happens:
 
 All slides are stacked on top of each other.
 
-- Only the current index gets opacity-100 and z-10
-- Others get opacity-0 and z-0 (hidden behind)
+* Only the current index gets opacity-100 and z-10
+    
+* Others get opacity-0 and z-0 (hidden behind)
+    
 
-Instead of unmounting and remounting, you simply fade between preloaded images. 
+Instead of unmounting and remounting, you simply fade between preloaded images.
 
---------------
+---
 
 ## 🕒 Auto-Play
 
-```
+```c
 useEffect(() => {
   const interval = setInterval(nextSlide, 5000);
   return () => clearInterval(interval);
@@ -173,7 +188,7 @@ useEffect(() => {
 
 Every 5 seconds, nextSlide() is triggered.
 
----------------------
+---
 
 ## 💬 Final Thoughts
 

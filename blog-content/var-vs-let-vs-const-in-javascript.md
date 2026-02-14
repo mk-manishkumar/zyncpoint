@@ -2,9 +2,21 @@
 title: "Var vs Let vs Const in JavaScript"
 slug: "var-vs-let-vs-const-in-javascript"
 excerpt: "var, let and const are just three keywords which are used to declare variables in JavaScript. Now, before deep diving into these 3 keywords, let's understand what a variable is. Variables are the kind of containers where values get stored. It acts li..."
-tags: "var let const, let and const, JavaScript, javascript variables, var let const in javascript"
-date: "2026-02-12T04:37:20.927Z"
-coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1663746381106/BIoeLfAgD.png"
+tags: "JavaScript, var let const, var let const in javascript, javascript variables"
+tagSlugs: "javascript, var-let-const, var-let-const-in-javascript, javascript-variables"
+date: "2026-02-13T06:54:28.799Z"
+publishedAt: "2022-09-21T13:43:27.199Z"
+updatedAt: "2026-02-13T06:54:28.799Z"
+coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770965650619/b0a9d20f-e0c5-4fbf-a326-920218941579.png"
+url: "https://manishmk.hashnode.dev/var-vs-let-vs-const-in-javascript"
+author: "Manish Kumar"
+authorUsername: "ManishMK"
+authorProfilePicture: "https://cdn.hashnode.com/res/hashnode/image/upload/v1754728990444/f59c3826-4a73-4075-9e55-7585e2283f0f.jpeg"
+readTimeInMinutes: 5
+reactionCount: 1
+responseCount: 0
+views: 58
+hashnodeId: "632b14ff29f9bcdf820d4da7"
 ---
 
 var, let and const are just three **keywords** which are used to declare variables in JavaScript. Now, before deep diving into these 3 keywords, let's understand what a **variable** is. Variables are the kind of containers where values get stored. It acts like a box which occupies some space when it's declared, and then the value gets stored in it.

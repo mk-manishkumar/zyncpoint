@@ -2,9 +2,23 @@
 title: "Buffer vs Streams: A Battle for the Ages"
 slug: "buffer-vs-streams-a-battle-for-the-ages"
 excerpt: "Welcome, dear readers, to the ultimate showdown between two of the most important concepts in computer programming: buffers and streams. In one corner, we have the humble buffer, a fixed-sized block of memory used to store data. In the other corner, ..."
-tags: "buffer, Streams, software development, iwritecode, WeMakeDevs"
-date: "2023-04-10T12:00:18.818Z"
+tags: "C, buffer, stream, software development, c language"
+tagSlugs: "c, buffer, stream, software-development, c-language"
+date: "2026-02-12T18:13:49.219Z"
+publishedAt: "2023-03-19T16:41:45.769Z"
+updatedAt: "2026-02-12T18:13:49.219Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1679243740909/a7dad55b-06bd-4c6f-b6f1-ddc4e90a3fcd.jpeg"
+url: "https://manishmk.hashnode.dev/buffer-vs-streams-a-battle-for-the-ages"
+author: "Manish Kumar"
+authorUsername: "ManishMK"
+authorProfilePicture: "https://cdn.hashnode.com/res/hashnode/image/upload/v1754728990444/f59c3826-4a73-4075-9e55-7585e2283f0f.jpeg"
+readTimeInMinutes: 5
+reactionCount: 0
+responseCount: 0
+views: 44
+seoTitle: "Buffer vs Streams: Understanding the Differences"
+seoDescription: "Learn the differences between buffers and streams in software development for optimal code performance."
+hashnodeId: "64173b49c55a5c4d53c027ea"
 ---
 
 Welcome, dear readers, to the ultimate showdown between two of the most important concepts in computer programming: buffers and streams. In one corner, we have the humble buffer, a fixed-sized block of memory used to store data. In the other corner, we have the mighty stream, a flowing river of data that can be read or written in small, manageable chunks. Which one will come out on top? Let's find out!

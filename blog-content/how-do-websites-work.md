@@ -2,9 +2,22 @@
 title: "How Do Websites Work"
 slug: "how-do-websites-work"
 excerpt: "In the last blog, I wrote about how the internet works. Today I will illustrate how exactly do websites work. What HTML, CSS, and JavaScript do exactly. To access a webpage, we need a browser. And that can be Chrome, Firefox, or whatever your favouri..."
-tags: "website, HTML, CSS, JavaScript, HowWebsitesWork, frontend, backend, http requests"
-date: "2026-02-12T03:27:28.188Z"
+tags: "web, HTML, HTML5, CSS, CSS3, JavaScript, HowWebsitesWork, frontend, backend, http requests, http"
+tagSlugs: "web, html, html5, css, css3, javascript, howwebsiteswork, frontend, backend, http-requests, http"
+date: "2026-02-12T18:02:15.418Z"
+publishedAt: "2022-07-28T15:08:41.915Z"
+updatedAt: "2026-02-12T18:02:15.418Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770866785604/7eb6cd75-44ad-414f-afb2-a891ee279aad.png"
+url: "https://manishmk.hashnode.dev/how-do-websites-work"
+author: "Manish Kumar"
+authorUsername: "ManishMK"
+authorProfilePicture: "https://cdn.hashnode.com/res/hashnode/image/upload/v1754728990444/f59c3826-4a73-4075-9e55-7585e2283f0f.jpeg"
+readTimeInMinutes: 4
+reactionCount: 0
+responseCount: 0
+views: 24
+seoTitle: "How do Websites Work"
+hashnodeId: "62e2a679d15a9fb24e51714f"
 ---
 
 In the last blog, I wrote about how the internet works. Today I will illustrate how exactly do websites work. What HTML, CSS, and JavaScript do exactly. To access a webpage, we need a browser. And that can be Chrome, Firefox, or whatever your favourite browser is. These are all pieces of software that allow us to look up the IP address of a website and be able to receive data that it can render into these beautiful websites that we see.

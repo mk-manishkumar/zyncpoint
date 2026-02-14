@@ -2,9 +2,23 @@
 title: "How to Always Keep Your Footer at the Bottom of the Page"
 slug: "how-to-always-keep-your-footer-at-the-bottom-of-the-page"
 excerpt: "We've all been there. You're crafting what you think is a beautiful webpage, with a header at the top, some content in the middle, and a footer completing the design at the bottom. Everything looks perfect... until you preview it on a larger screen.\n..."
-tags: "sticky-footer, css flexbox, Web Development, css layout , Frontend Tips, Web Design, Frontend Development, web layout, CSS"
-date: "2026-02-12T17:36:33.125Z"
+tags: "CSS, sticky-footer, Frontend Development, flexbox, Flexbox properties, webdesign, layout"
+tagSlugs: "css, sticky-footer, frontend-development, flexbox, flexbox-properties, webdesign, layout"
+date: "2026-02-12T18:15:57.771Z"
+publishedAt: "2026-01-07T11:49:53.691Z"
+updatedAt: "2026-02-12T18:15:57.771Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770917757345/87b7d860-0857-4a15-a67b-3b35f87aa5e9.png"
+url: "https://manishmk.hashnode.dev/how-to-always-keep-your-footer-at-the-bottom-of-the-page"
+author: "Manish Kumar"
+authorUsername: "ManishMK"
+authorProfilePicture: "https://cdn.hashnode.com/res/hashnode/image/upload/v1754728990444/f59c3826-4a73-4075-9e55-7585e2283f0f.jpeg"
+readTimeInMinutes: 3
+reactionCount: 0
+responseCount: 0
+views: 7
+seoTitle: "How to Keep Footer at Bottom of Page with CSS Flexbox | Simple Guide"
+seoDescription: "Learn how to keep your footer at the bottom of the page using CSS Flexbox. A simple, no-hack solution that works on all screen sizes. Includes code examples"
+hashnodeId: "695e48617a7a2591796cee1d"
 ---
 
 We've all been there. You're crafting what you think is a beautiful webpage, with a header at the top, some content in the middle, and a footer completing the design at the bottom. Everything looks perfect... until you preview it on a larger screen.

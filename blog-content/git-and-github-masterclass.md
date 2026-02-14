@@ -3,8 +3,22 @@ title: "Git and GitHub Masterclass"
 slug: "git-and-github-masterclass"
 excerpt: "What is Git\nGit is a tool that allows you to version control.\nSuppose we create a file in which JavaScript code is written on 20th July 2022. Then on 21st July, we did some minor changes to it. And then again on 22nd July, 23rd July and 24th July we ..."
 tags: "Git, GitHub, Gitcommands, git branch, git basics for beginners"
+tagSlugs: "git, github, gitcommands, git-branch, git-basics-for-beginners"
 date: "2026-02-12T04:02:02.495Z"
+publishedAt: "2022-07-21T07:08:39.261Z"
+updatedAt: "2026-02-12T04:02:02.495Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770868856115/c6916fe2-f36e-4ece-b767-1a712915e140.png"
+url: "https://manishmk.hashnode.dev/git-and-github-masterclass"
+author: "Manish Kumar"
+authorUsername: "ManishMK"
+authorProfilePicture: "https://cdn.hashnode.com/res/hashnode/image/upload/v1754728990444/f59c3826-4a73-4075-9e55-7585e2283f0f.jpeg"
+readTimeInMinutes: 6
+reactionCount: 1
+responseCount: 0
+views: 102
+seoTitle: "Git and Github"
+seoDescription: "Git, Github, git init, git status, git clone, git branch, git commit, git add, git config, git checkout, git remote, git fetch, git push, git pull, git log"
+hashnodeId: "62d8fb773df6e54ab8e5db95"
 ---
 
 # What is Git

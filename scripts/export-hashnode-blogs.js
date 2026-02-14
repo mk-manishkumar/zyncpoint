@@ -5,11 +5,9 @@ import crypto from "node:crypto";
 const HASHNODE_API = "https://gql.hashnode.com";
 const PUBLICATION_HOST = "manishmk.hashnode.dev";
 const OUTPUT_DIR = path.join(process.cwd(), "blog-content");
-
-// Configuration
-const UPDATE_EXISTING = process.env.UPDATE_BLOGS === "true";
 const POSTS_PER_PAGE = 50;
 
+// Comprehensive GraphQL query to fetch all blog details
 const query = `
 query GetPublicationPosts($host: String!, $first: Int!, $after: String) {
   publication(host: $host) {
@@ -20,20 +18,48 @@ query GetPublicationPosts($host: String!, $first: Int!, $after: String) {
       }
       edges {
         node {
+          id
           title
           slug
           brief
-          publishedAt
-          updatedAt
-          tags {
-            name
-          }
           content {
             markdown
+            html
           }
+          publishedAt
+          updatedAt
+          url
           coverImage {
             url
+            attribution
           }
+          author {
+            name
+            username
+            profilePicture
+          }
+          tags {
+            id
+            name
+            slug
+          }
+          readTimeInMinutes
+          reactionCount
+          responseCount
+          views
+          seo {
+            title
+            description
+          }
+          ogMetaData {
+            image
+          }
+          series {
+            name
+            slug
+          }
+          canonicalUrl
+          subtitle
         }
       }
     }
@@ -41,12 +67,21 @@ query GetPublicationPosts($host: String!, $first: Int!, $after: String) {
 }
 `;
 
+/**
+ * Fetch all blogs from Hashnode with pagination
+ */
 async function fetchBlogs() {
   let allPosts = [];
   let hasNextPage = true;
   let cursor = null;
+  let pageCount = 0;
+
+  console.log("🚀 Starting to fetch blogs from Hashnode...\n");
 
   while (hasNextPage) {
+    pageCount++;
+    console.log(`📄 Fetching page ${pageCount}...`);
+
     const res = await fetch(HASHNODE_API, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -60,28 +95,39 @@ async function fetchBlogs() {
       }),
     });
 
-    if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
+    if (!res.ok) {
+      throw new Error(`HTTP error! status: ${res.status}`);
+    }
 
     const json = await res.json();
 
-    if (json.errors) throw new Error(`GraphQL errors: ${JSON.stringify(json.errors)}`);
+    if (json.errors) {
+      throw new Error(`GraphQL errors: ${JSON.stringify(json.errors)}`);
+    }
 
-    if (!json.data?.publication) throw new Error("Failed to fetch publication from Hashnode");
+    if (!json.data?.publication) {
+      throw new Error("Failed to fetch publication from Hashnode");
+    }
 
     const postsData = json.data.publication.posts;
     const posts = postsData.edges.map((edge) => edge.node);
+
+    console.log(`   ✓ Fetched ${posts.length} posts`);
     allPosts = allPosts.concat(posts);
 
     hasNextPage = postsData.pageInfo.hasNextPage;
     cursor = postsData.pageInfo.endCursor;
   }
 
+  console.log(`\n✅ Total blogs fetched: ${allPosts.length}\n`);
   return allPosts;
 }
 
+/**
+ * Escape special characters for YAML frontmatter
+ */
 function escapeForYAML(value = "") {
   if (!value) return "";
-  // Escape quotes and newlines for YAML frontmatter
   return value
     .replaceAll("\\", String.raw`\\`)
     .replaceAll('"', String.raw`\"`)
@@ -89,107 +135,173 @@ function escapeForYAML(value = "") {
     .replaceAll("\r", String.raw`\r`);
 }
 
+/**
+ * Convert blog post to markdown file with comprehensive frontmatter
+ */
 function toMarkdownFile(post) {
-  // Use updatedAt if available, otherwise fall back to publishedAt
   const date = post.updatedAt || post.publishedAt;
-
-  // Extract tag names and join them with commas
   const tags = post.tags?.map((tag) => tag.name).join(", ") || "";
+  const tagSlugs = post.tags?.map((tag) => tag.slug).join(", ") || "";
 
-  return `---
+  // Build frontmatter with all available fields
+  let frontmatter = `---
 title: "${escapeForYAML(post.title)}"
 slug: "${post.slug}"
 excerpt: "${escapeForYAML(post.brief)}"
 tags: "${tags}"
+tagSlugs: "${tagSlugs}"
 date: "${date}"
-coverImage: "${post.coverImage?.url || ""}"
----
+publishedAt: "${post.publishedAt}"
+updatedAt: "${post.updatedAt || post.publishedAt}"
+coverImage: "${post.coverImage?.url || ""}"`;
 
-${post.content?.markdown?.trim() || ""}
-`;
+  // Add optional fields if available
+  if (post.subtitle) {
+    frontmatter += `\nsubtitle: "${escapeForYAML(post.subtitle)}"`;
+  }
+
+  if (post.url) {
+    frontmatter += `\nurl: "${post.url}"`;
+  }
+
+  if (post.canonicalUrl) {
+    frontmatter += `\ncanonicalUrl: "${post.canonicalUrl}"`;
+  }
+
+  if (post.author) {
+    frontmatter += `\nauthor: "${post.author.name}"`;
+    frontmatter += `\nauthorUsername: "${post.author.username}"`;
+    if (post.author.profilePicture) {
+      frontmatter += `\nauthorProfilePicture: "${post.author.profilePicture}"`;
+    }
+  }
+
+  if (post.readTimeInMinutes) {
+    frontmatter += `\nreadTimeInMinutes: ${post.readTimeInMinutes}`;
+  }
+
+  if (post.reactionCount !== undefined) {
+    frontmatter += `\nreactionCount: ${post.reactionCount}`;
+  }
+
+  if (post.responseCount !== undefined) {
+    frontmatter += `\nresponseCount: ${post.responseCount}`;
+  }
+
+  if (post.views !== undefined) {
+    frontmatter += `\nviews: ${post.views}`;
+  }
+
+  if (post.series) {
+    frontmatter += `\nseriesName: "${escapeForYAML(post.series.name)}"`;
+    frontmatter += `\nseriesSlug: "${post.series.slug}"`;
+  }
+
+  if (post.seo?.title) {
+    frontmatter += `\nseoTitle: "${escapeForYAML(post.seo.title)}"`;
+  }
+
+  if (post.seo?.description) {
+    frontmatter += `\nseoDescription: "${escapeForYAML(post.seo.description)}"`;
+  }
+
+  if (post.ogMetaData?.image) {
+    frontmatter += `\nogImage: "${post.ogMetaData.image}"`;
+  }
+
+  if (post.coverImage?.attribution) {
+    frontmatter += `\ncoverImageAttribution: "${escapeForYAML(post.coverImage.attribution)}"`;
+  }
+
+  frontmatter += `\nhashnodeId: "${post.id}"`;
+  frontmatter += `\n---\n\n`;
+
+  // Add the markdown content
+  const content = post.content?.markdown?.trim() || "";
+
+  return frontmatter + content + "\n";
 }
 
+/**
+ * Generate MD5 hash of content for comparison
+ */
 function getContentHash(content) {
   return crypto.createHash("md5").update(content).digest("hex");
 }
 
+/**
+ * Main export function
+ */
 async function exportBlogs() {
-  if (!fs.existsSync(OUTPUT_DIR)) fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+  try {
+    // Ensure output directory exists
+    if (!fs.existsSync(OUTPUT_DIR)) {
+      fs.mkdirSync(OUTPUT_DIR, { recursive: true });
+      console.log(`📁 Created directory: ${OUTPUT_DIR}\n`);
+    }
 
-  const posts = await fetchBlogs();
+    // Fetch all blogs from Hashnode
+    const posts = await fetchBlogs();
 
-  console.log(`\n🔍 Fetch Info:`);
-  console.log(`   Total posts from API: ${posts.length}`);
+    if (posts.length === 0) {
+      console.log("⚠️  No posts found!");
+      return;
+    }
 
-  let createdCount = 0;
-  let updatedCount = 0;
-  let skippedCount = 0;
+    let createdCount = 0;
+    let updatedCount = 0;
+    let unchangedCount = 0;
 
-  // Track current slugs
-  const currentSlugs = new Set(posts.map((p) => p.slug));
-  const existingFiles = fs
-    .readdirSync(OUTPUT_DIR)
-    .filter((f) => f.endsWith(".md"))
-    .map((f) => path.basename(f, ".md"));
+    console.log("💾 Writing blog files...\n");
 
-  // Process each post
-  posts.forEach((post) => {
-    const filePath = path.join(OUTPUT_DIR, `${post.slug}.md`);
-    const newContent = toMarkdownFile(post);
-    const exists = fs.existsSync(filePath);
+    // Process each post
+    for (const post of posts) {
+      const filePath = path.join(OUTPUT_DIR, `${post.slug}.md`);
+      const newContent = toMarkdownFile(post);
+      const exists = fs.existsSync(filePath);
 
-    if (exists) {
-      if (UPDATE_EXISTING) {
-        // ALWAYS overwrite to ensure fresh content
+      if (exists) {
+        // Check if content has changed
         const existingContent = fs.readFileSync(filePath, "utf8");
         const existingHash = getContentHash(existingContent);
         const newHash = getContentHash(newContent);
 
-        fs.writeFileSync(filePath, newContent, "utf8");
-
-        if (existingHash === newHash) {
-          skippedCount++;
-        } else {
+        if (existingHash !== newHash) {
+          fs.writeFileSync(filePath, newContent, "utf8");
           updatedCount++;
           console.log(`✏️  Updated: ${post.slug}.md`);
+        } else {
+          unchangedCount++;
         }
       } else {
-        skippedCount++;
+        // Create new file
+        fs.writeFileSync(filePath, newContent, "utf8");
+        createdCount++;
+        console.log(`✅ Created: ${post.slug}.md`);
       }
-    } else {
-      // New file
-      fs.writeFileSync(filePath, newContent, "utf8");
-      createdCount++;
-      console.log(`✅ Created: ${post.slug}.md`);
     }
-  });
 
-  // Check for orphaned files (don't auto-delete)
-  const orphanedFiles = existingFiles.filter((slug) => !currentSlugs.has(slug));
-  if (orphanedFiles.length > 0 && UPDATE_EXISTING) {
-    console.log(`\n⚠️  Warning: ${orphanedFiles.length} local file(s) not found in API:`);
-    orphanedFiles.forEach((slug) => {
-      console.log(`   - ${slug}.md (kept locally, not deleted)`);
-    });
-  }
-
-  // Summary
-  console.log("\n📊 Export Summary:");
-  console.log(`   Total posts fetched: ${posts.length}`);
-  console.log(`   ✅ Created: ${createdCount}`);
-  if (UPDATE_EXISTING) {
+    // Summary
+    console.log("\n" + "=".repeat(50));
+    console.log("📊 Export Summary:");
+    console.log("=".repeat(50));
+    console.log(`   Total posts fetched: ${posts.length}`);
+    console.log(`   ✅ Created: ${createdCount}`);
     console.log(`   ✏️  Updated: ${updatedCount}`);
-    console.log(`   ⏭️  Refreshed (unchanged): ${skippedCount}`);
-  } else {
-    console.log(`   ⏭️  Skipped (existing): ${skippedCount}`);
-  }
+    console.log(`   ⏭️  Unchanged: ${unchangedCount}`);
+    console.log("=".repeat(50) + "\n");
 
-  if (!UPDATE_EXISTING) {
-    console.log(`\n💡 Tip: Set UPDATE_BLOGS=true to update existing posts`);
+    console.log("✨ Blog export completed successfully!\n");
+  } catch (err) {
+    console.error("\n❌ Export failed:", err.message);
+    if (process.env.NODE_ENV === "development") {
+      console.error(err);
+    }
+    process.exit(1);
   }
-  console.log();
 }
 
+// Run the export
 try {
   await exportBlogs();
 } catch (err) {

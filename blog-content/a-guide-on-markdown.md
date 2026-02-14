@@ -3,8 +3,22 @@ title: "A Guide on Markdown"
 slug: "a-guide-on-markdown"
 excerpt: "Markdown is a lightweight markup language with a plain text formatting syntax. So, like HTML, it's a markup language, but we don't use tags or anything like that here. It's a very readable syntax, and it can be converted into HTML/XHTML as well as ot..."
 tags: "markdown, markdown cheat sheet, Markdown, How to write markdown file, , #markdown syntax, md, mdx"
+tagSlugs: "markdown, markdown-cheat-sheet, markdown-how-to-write-markdown-file, markdown-syntax, md, mdx"
 date: "2026-02-12T03:37:28.375Z"
+publishedAt: "2022-07-24T07:21:05.801Z"
+updatedAt: "2026-02-12T03:37:28.375Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770867403088/51b4779e-a6f7-4e4e-93be-74b2a86771be.png"
+url: "https://manishmk.hashnode.dev/a-guide-on-markdown"
+author: "Manish Kumar"
+authorUsername: "ManishMK"
+authorProfilePicture: "https://cdn.hashnode.com/res/hashnode/image/upload/v1754728990444/f59c3826-4a73-4075-9e55-7585e2283f0f.jpeg"
+readTimeInMinutes: 5
+reactionCount: 0
+responseCount: 0
+views: 11
+seoTitle: "Markdown Guide"
+seoDescription: "A guide on markdown, Markdown cheatsheet, markdown cheetsheet, markdown cheat sheet"
+hashnodeId: "62dcf2e1b12ca5754f6a61a7"
 ---
 
 Markdown is a lightweight markup language with a plain text formatting syntax. So, like HTML, it's a **markup language,** but we don't use tags or anything like that here. It's a very readable syntax, and it can be converted into HTML/XHTML as well as other formats. Its main purpose is readability. The creators of markdown basically wanted documents to look like plain text documents without any HTML tags or anything like that.

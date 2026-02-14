@@ -3,8 +3,21 @@ title: "Weird History of JavaScript"
 slug: "weird-history-of-javascript"
 excerpt: "In 1995, Netscape Navigator was the most popular web browser. They thought of creating a programming language that could add interactivity to the website. At that time, Brendan Eich was working for Netscape Navigator. He made JavaScript in only 10 da..."
 tags: "JavaScript, history of javascript, ecmascript, ecmascript6, tc39"
-date: "2026-02-12T04:24:17.723Z"
-coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1663437515075/qegW9zqQ4.png"
+tagSlugs: "javascript, history-of-javascript, ecmascript, ecmascript6, tc39"
+date: "2026-02-13T04:15:46.285Z"
+publishedAt: "2022-09-17T18:04:25.295Z"
+updatedAt: "2026-02-13T04:15:46.285Z"
+coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770956116886/a6fb0758-9e6b-4a66-9de4-ff0944781b5c.png"
+url: "https://manishmk.hashnode.dev/weird-history-of-javascript"
+author: "Manish Kumar"
+authorUsername: "ManishMK"
+authorProfilePicture: "https://cdn.hashnode.com/res/hashnode/image/upload/v1754728990444/f59c3826-4a73-4075-9e55-7585e2283f0f.jpeg"
+readTimeInMinutes: 3
+reactionCount: 1
+responseCount: 1
+views: 39
+seoTitle: "Weird History of Javascript"
+hashnodeId: "63260c29dd55cd8b89b1fd1a"
 ---
 
 In 1995, **Netscape Navigator** was the most popular web browser. They thought of creating a programming language that could add interactivity to the website. At that time, [Brendan Eich](https://en.wikipedia.org/wiki/Brendan_Eich) was working for [Netscape Navigator](https://en.wikipedia.org/wiki/Netscape_Navigator). He made JavaScript in **only 10 days.** He named it **Mocha** at that time. He then changed it to **LiveScript**. But it wasn't gaining as much popularity as Brendan expected, and Java was very popular at that time. So, they thought of marketing it using the name of Java and changed the name of LiveScript to JavaScript.

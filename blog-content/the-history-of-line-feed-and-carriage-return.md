@@ -2,9 +2,23 @@
 title: "The History of Line Feed and Carriage Return"
 slug: "the-history-of-line-feed-and-carriage-return"
 excerpt: "Get ready to learn about the wild world of line feed and carriage return, the dynamic duo of text formatting! You might think they're just boring old control characters, but oh boy, do they have a story to tell.\nBack in the day, typewriters ruled the..."
-tags: "end-of-line characters, text formatting"
-date: "2026-02-12T04:43:55.917Z"
+tags: "computing, text formatting, ascii, encoding, unix, Windows, terminal, textfields"
+tagSlugs: "computing, text-formatting, ascii, encoding, unix, windows, terminal, textfields"
+date: "2026-02-12T18:09:22.645Z"
+publishedAt: "2023-03-03T12:55:47.503Z"
+updatedAt: "2026-02-12T18:09:22.645Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1677847866625/a23cf06a-e3dc-4917-8458-d94faebab229.jpeg"
+url: "https://manishmk.hashnode.dev/the-history-of-line-feed-and-carriage-return"
+author: "Manish Kumar"
+authorUsername: "ManishMK"
+authorProfilePicture: "https://cdn.hashnode.com/res/hashnode/image/upload/v1754728990444/f59c3826-4a73-4075-9e55-7585e2283f0f.jpeg"
+readTimeInMinutes: 2
+reactionCount: 0
+responseCount: 0
+views: 14
+seoTitle: "A Brief History of Line Feed and Carriage Return"
+seoDescription: "Discover the fascinating history of line feed and carriage return, the dynamic duo of text formatting!"
+hashnodeId: "6401ee538f692e2e69621532"
 ---
 
 Get ready to learn about the wild world of line feed and carriage return, the dynamic duo of text formatting! You might think they're just boring old control characters, but oh boy, do they have a story to tell.

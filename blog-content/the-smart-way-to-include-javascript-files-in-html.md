@@ -2,9 +2,23 @@
 title: "The Smart Way to Include JavaScript Files in HTML"
 slug: "the-smart-way-to-include-javascript-files-in-html"
 excerpt: "Look, if you've been building websites for a while, you've probably thrown a <script> tag into your HTML without thinking twice about it. But here's the thing, there's actually a right way and a wrong way to do this. And more importantly, there are f..."
-tags: "javascript-html-integration, script-tag-best-practices, async-defer-javascript, javascript-loading-methods, html-script-placement, JavaScript, async vs defer, JavaScript performance"
-date: "2026-02-11T17:42:41.940Z"
-coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770831505680/fc78fc27-ad8b-460d-83e2-7a85e74cf796.png"
+tags: "JavaScript, async vs defer, JavaScript performance, javascript-html-integration, script-tag-best-practices, async-defer-javascript, javascript-loading-methods, html-script-placement"
+tagSlugs: "javascript, async-vs-defer, javascript-performance, javascript-html-integration, script-tag-best-practices, async-defer-javascript, javascript-loading-methods, html-script-placement"
+date: "2026-02-13T09:26:42.516Z"
+publishedAt: "2026-02-11T17:42:41.940Z"
+updatedAt: "2026-02-13T09:26:42.516Z"
+coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770974508336/fe4d3341-ac97-4111-a040-16954f1e26fa.png"
+url: "https://manishmk.hashnode.dev/the-smart-way-to-include-javascript-files-in-html"
+author: "Manish Kumar"
+authorUsername: "ManishMK"
+authorProfilePicture: "https://cdn.hashnode.com/res/hashnode/image/upload/v1754728990444/f59c3826-4a73-4075-9e55-7585e2283f0f.jpeg"
+readTimeInMinutes: 6
+reactionCount: 0
+responseCount: 0
+views: 8
+seoTitle: "The Smart Way to Include JavaScript Files in HTML (2026 Guide)"
+seoDescription: "Learn the 4 essential methods to add JavaScript files to HTML, from script tags in head to async and defer attributes."
+hashnodeId: "698cbf9106036cc4ed9c422d"
 ---
 
 Look, if you've been building websites for a while, you've probably thrown a `<script>` tag into your HTML without thinking twice about it. But here's the thing, there's actually a right way and a wrong way to do this. And more importantly, there are four different methods, each with its own use case.

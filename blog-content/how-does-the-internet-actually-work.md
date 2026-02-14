@@ -2,9 +2,22 @@
 title: "How Does the Internet Actually Work?"
 slug: "how-does-the-internet-actually-work"
 excerpt: "Nowadays, a lot of beginners straightaway start learning the internet languages HTML, CSSS and JavaScript without understanding the fundamentals of how the internet works. But, before deep diving into it, let's understand what exactly is the internet..."
-tags: "how internet works, submarinecable.com, internet, submarine, IP"
-date: "2026-02-12T03:18:02.746Z"
+tags: "web, internet, how internet works, #HowInternetWorks, IP, SubmarineCables, submarinecable.com"
+tagSlugs: "web, internet, how-internet-works, howinternetworks, ip, submarinecables, submarinecablecom"
+date: "2026-02-12T18:00:41.363Z"
+publishedAt: "2022-07-25T13:57:09.398Z"
+updatedAt: "2026-02-12T18:00:41.363Z"
 coverImage: "https://cdn.hashnode.com/res/hashnode/image/upload/v1770866066146/c838b0dc-cdeb-4ed9-af81-2833b6056268.png"
+url: "https://manishmk.hashnode.dev/how-does-the-internet-actually-work"
+author: "Manish Kumar"
+authorUsername: "ManishMK"
+authorProfilePicture: "https://cdn.hashnode.com/res/hashnode/image/upload/v1754728990444/f59c3826-4a73-4075-9e55-7585e2283f0f.jpeg"
+readTimeInMinutes: 4
+reactionCount: 0
+responseCount: 1
+views: 18
+seoTitle: "How Does the Internet Actually Work"
+hashnodeId: "62dea135790e138f3d396683"
 ---
 
 Nowadays, a lot of beginners straightaway start learning the internet languages HTML, CSSS and JavaScript without understanding the fundamentals of how the internet works. But, before deep diving into it, let's understand what exactly is the internet.
